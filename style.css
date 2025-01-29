@@ -1,0 +1,21 @@
+* {margin: 0;
+padding: 0;
+}
+
+.carousel-container {
+    display: flex;
+    justify-content: center; 
+    margin-top: 50px;  
+    height: 250px; 
+  }
+  
+#carouselExampleInterval {
+    width: 60%; 
+    margin: auto;
+    
+  }
+  
+.carousel-item img {
+    width: 100%;  
+    
+  }
