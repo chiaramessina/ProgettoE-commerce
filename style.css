@@ -19,3 +19,44 @@ padding: 0;
     width: 100%;  
     
   }
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: auto;
+    margin-bottom: 5%;
+    gap: 20px;
+}
+.card {
+    width: 200px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+}
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+.card h3 {
+    margin: 10px 0;
+}
+.prezzo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.prezzo {
+  margin-right: 10px;
+}
+
+img.cart {
+  width: 20%;
+  float: right;
+}
+img.heart{
+  width:15%;
+  float: left;
+}
