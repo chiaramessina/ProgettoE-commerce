@@ -27,15 +27,15 @@
     gap: 2em;
 }
 
-h1{
+#category-header, #chi-siamo-title{
     text-align: center;
 }
 
-h3{
+.content-title{
     padding: 25px;
 }
 
-span{
+.category{
     position: absolute;
     bottom: 0;
     width: 100%;
