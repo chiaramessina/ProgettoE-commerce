@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/category.css">
-    <title>Document</title>
+        <link rel="stylesheet" href="styles/category.css">
 </head>
+
 <body>
     <div class="carousel">
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
@@ -39,19 +39,19 @@
         <div id="category-circle-container">
             <div class="circle hvr-glow">
                 <img src="https://placehold.co/200/3D3D3D/F5ECD5" alt="" class="category-item"  >
-                <span>Abbigliamento donna</span>
+                <span class="category-name">Abbigliamento donna</span>
             </div>
             <div class="circle">
                 <img src="https://placehold.co/200/3D3D3D/F5ECD5" alt="" class="category-item">
-                <span>Abbigliamento maschio</span>
+                <span class="category-name">Abbigliamento maschio</span>
             </div>
             <div class="circle">
                 <img src="https://placehold.co/200/3D3D3D/F5ECD5" alt="" class="category-item">
-                <span>Gioielleria</span>
+                <span class="category-name">Gioielleria</span>
             </div>
             <div class="circle">
                 <img src="https://placehold.co/200/3D3D3D/F5ECD5" alt="" class="category-item">
-                <span>Elettronica</span>
+                <span class="category-name">Elettronica</span>
             </div>
         </div>
     </div>
@@ -215,7 +215,7 @@
 </div>
 </div>
 
-<script src="/js/category.js"></script>
+<script src="/js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -255,5 +255,37 @@
         </ul>
     </footer>
 </div>
+  <nav id="nav" class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+
+      <img src="https://www.freeiconspng.com/uploads/website-icon-15.jpg" alt="Logo" width="75">
+      <button id="barra" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+
+          <li class="nav-item dropdown">
+           
+
+
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button id="tasto" class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+      </div>
+      <div class="icons">
+        <i class="fas fa-heart"></i> <!-- Icona preferiti -->
+        <i class="fas fa-shopping-cart"></i><!-- Icona carrello -->
+         <i class="fas fa-user-alt"></i>
+      </div>
+    </div>
+   
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 </body>
-</html>
