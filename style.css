@@ -2,6 +2,11 @@
     margin: 0;
     padding: 0;
 }
+h2 {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
 
 body{
   background-color: #FFFAEC;
@@ -65,6 +70,38 @@ img.cart {
 img.heart{
   width:15%;
   float: left;
+}
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%; 
+  padding: 20px 0;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+  background-color:  #F5ECD5 ;
+}
+
+.privacy-newsletter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.privacy-newsletter-container p {
+  margin: 0 15px; /* Distanza tra i link */
+}
+
+.bi {
+  font-size: 40px; /*dimensioni icone footer */
 }
 
 h2 {
