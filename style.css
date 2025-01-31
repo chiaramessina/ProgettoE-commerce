@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+body{
+  background-color: #FFFAEC;
+
+}
+ 
 .carousel-container {
     display: flex;
     justify-content: center; 
@@ -23,7 +28,7 @@
 .container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; 
     padding: auto;
     margin-bottom: 5%;
     gap: 20px;
@@ -60,4 +65,93 @@ img.cart {
 img.heart{
   width:15%;
   float: left;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
+
+/* CSS OLEKSANDR NON TOCCARE */
+
+
+
+.category-item{
+  border-radius: 50%;
+}
+
+.circle{
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  transform: perspective(1px) translateZ(0);
+  transition-duration: 0.3s;
+}
+
+.circle:hover{
+  cursor: pointer;
+  box-shadow: 0 0 8px #578e7ea9;
+  scale: 1.05;
+}
+
+#category-circle-container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+#category-header, #chi-siamo-title{
+  text-align: center;
+}
+
+.content-title{
+  padding: 25px;
+}
+
+.category-name{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2em;
+  background-color: #578E7E ;
+  text-align: center;
+  line-height: 2em;
+  color: white;
+  border-radius: 5px;
+}
+#chi-siamo-container{
+  background-color: #F5ECD5 ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#chi-siamo-content-container{
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  height: 90%;
+
+}
+
+.chi-siamo-column-container{
+  max-width: 450px;
+}
+
+.content-text{
+  padding: 25px;
+}
+
+.btn-primary{
+  background-color: #306455;
+  border-color: #578E7E;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary:active:hover{
+  background-color: #578E7E;
+  border-color: #306455;
 }
