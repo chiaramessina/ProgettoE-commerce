@@ -80,3 +80,96 @@
   color: rgb(0, 0, 0); 
   cursor: pointer;
 }
+/*fine  header*/
+
+.containerTutti {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    padding: auto;
+    margin-bottom: 5%;
+    gap: 20px;
+}
+
+.card {
+    width: 200px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+}
+.card img {
+    width: 100%;
+    border-radius: 10px;
+
+}
+.card h3 {
+    margin: 10px 0;
+    font-size: 20px;
+}
+.prezzo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.prezzo {
+  margin-right: 10px;
+}
+
+img.cart {
+  width: 20%;
+  float: right;
+}
+img.heart{
+  width:15%;
+  float: left;
+}
+
+
+
+
+
+
+
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+    padding: 20px 0;
+  }
+  
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    background-color:  #F5ECD5 ;
+  }
+  
+  .privacy-newsletter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .privacy-newsletter-container p {
+    margin: 0 15px; /* Distanza tra i link */
+  }
+  
+  .bi {
+    font-size: 40px; /*dimensioni icone footer */
+  }
+  
+  h2 {
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 2%;
+  }
+  /*fine  footer*/

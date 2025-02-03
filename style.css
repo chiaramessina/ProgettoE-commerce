@@ -81,7 +81,7 @@
   cursor: pointer;
 }
 
-
+/*fine header */
 
 h2 {
   text-align: center;
@@ -152,6 +152,8 @@ img.heart{
   width:15%;
   float: left;
 }
+
+/*inizio footer*/
 .footer-container {
   display: flex;
   flex-direction: column;
@@ -190,7 +192,7 @@ h2 {
   margin-top: 5%;
   margin-bottom: 2%;
 }
-
+/*fine  footer*/
 /* CSS OLEKSANDR NON TOCCARE */
 
 
