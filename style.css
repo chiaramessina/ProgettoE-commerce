@@ -65,7 +65,84 @@
   width: 40px;
   height: 40px;
   font-size: 17px;
+#nav {
+  background-color: #578E7E !important;
+  margin-bottom: 50px;
+  
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-right: 30px;
+}
+.navbar-nav .nav-item {
+  margin: 0 15px;
+  align-items: center;
+}
+
+.navbar .icons {
+  color: #F5ECD5;
+  margin-left: 15px;
+  font-size: 25px;
+}
+
+#navbarSupportedContent {
+  display: flex;
+  position: relative;
+  
+}
+.logo {
+  margin: 5px 30px;
+  margin-left: 30px;
+  margin-bottom: 5px;
+}
+
+
+#navbarSupportedContent form {
+  display: flex;
+  align-items: center;
+  
+}
+.d-flex1{
+  position: absolute;
+  right: 20px;
+
+}
+
+#navbarSupportedContent input.form-control {
+  display: flex;
+  border-radius: 25px; 
+  width: 90%;
+  padding: 10px 10px; 
+  height: 40px;
+  
+
+}
+
+#tasto {
+  border-radius: 70%;
+  background-color: #3D3D3D;
+  color: white;
+  width: 40px;
+  height: 40px;
+  font-size: 17px;
   border: none;
+  margin-left: 10px;
+  
+}
+
+.icons {
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
+}
+
+.icons i:hover {
+  color: rgb(0, 0, 0); 
+  cursor: pointer;
+}
   margin-left: 10px;
   
 }

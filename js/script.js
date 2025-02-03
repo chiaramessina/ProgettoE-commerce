@@ -42,3 +42,28 @@
 
 //                 document.querySelector(".container").innerHTML = products;
 // });
+
+
+fetch('https://fakestoreapi.com/products')
+            .then(res=>res.json())
+             .then(prods=>{
+                 const products = prods.map(prod=>{
+                    return `
+                <div class="card">
+                     <a href="pag di riferimento per prodotto">
+                    <img class="heart" src="Images/icona cuore.png">
+                     </a>
+                    <img src="${prod.image}" alt="Immagine 1">
+                     <h3 class= "titolo">${prod.title}</h3>
+                  <div class="prezzo-container">
+                       <p class="prezzo"> ${prod.price} </p>
+                     <a href="pag di riferimento per prodotto">
+                       <img class="cart" src="Images/icona carrello.png" alt="Carrello"> 
+                        </a>
+                    </div>
+                   </div>
+                `
+                }).join('')
+
+               document.querySelector(".containerTutti").innerHTML = products;
+ });
