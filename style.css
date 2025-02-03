@@ -39,6 +39,11 @@ h2 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .card img {
     width: 100%;
@@ -70,8 +75,8 @@ img.heart{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%; 
-  padding: 20px 0;
+  width: 100%;
+  padding: 20px;
 }
 
 footer {
@@ -79,21 +84,14 @@ footer {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 10px 0;
-  background-color:  #F5ECD5 ;
 }
 
-.privacy-newsletter-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+footer .social-icons a {
+  font-size: 24px;
+  color: #6c757d; 
+  text-decoration: none; 
 }
 
-.privacy-newsletter-container p {
-  margin: 0 15px; /* Distanza tra i link */
-}
-
-.bi {
-  font-size: 40px; /*dimensioni icone footer */
+footer .social-icons a:hover {
+  color: #007bff;
 }
