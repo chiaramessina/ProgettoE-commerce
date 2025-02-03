@@ -2,6 +2,74 @@
     margin: 0;
     padding: 0;
 }
+
+  #nav {
+    background-color: #578E7E !important;
+    margin-bottom: 50px;
+    
+  }
+  
+  
+  .navbar .icons {
+    color: #F5ECD5;
+    margin-left: 15px;
+    font-size: 25px;
+  }
+  
+  .navbar .icons:hover {
+    color: #000000;
+  }
+  
+  
+  #navbarSupportedContent {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    
+  }
+  .logo {
+    margin: 5px 30px;
+    margin-left: 30px;
+    margin-bottom: 5px;
+  }
+  
+  #navbarSupportedContent form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180%; 
+  }
+  
+  
+  #navbarSupportedContent input.form-control {
+    display: flex;
+    border-radius: 25px; 
+    width: 90%;
+    padding: 10px 10px; 
+  
+  }
+  
+  #tasto {
+    border-radius: 70%;
+    background-color: #3D3D3D;
+    color: white;
+    width: 40px;
+    height: 40px;
+    font-size: 17px;
+  border: none;
+  }
+  
+  .icons {
+    display: flex;
+    gap: 15px;
+    font-size: 20px;
+  }
+  
+  .icons i:hover {
+    color: rgb(0, 0, 0); 
+  }
+
+
 h2 {
   text-align: center;
   margin-top: 5%;
