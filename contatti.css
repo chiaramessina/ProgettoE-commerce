@@ -5,14 +5,43 @@
     font-size: 32px;
     color: #306455;
 }
-
-.contact-container {
+.flex-container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
     padding: 40px;
+}
+
+.faq-container, .contact-container {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.faq-container div{
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.faq-container span{
+    font-size: 18px;
+}
+.altricontatti-container{
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq-container h3, .contact-container h3 {
+    font-size: 24px;
+    color: #306455;
 }
 
 .contact-form {
@@ -59,12 +88,12 @@
 }
 
 .contact-info {
-    text-align: center;
+    text-align: left;
     margin-top: 40px;
-    font-size: 18px;
+    font-size: 16px;
 }
-
-.contact-info p {
+.contact-info h3 {
+    text-align: left;
     margin: 10px 0;
 }
 
