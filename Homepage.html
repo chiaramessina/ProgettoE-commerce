@@ -10,51 +10,42 @@
     <link rel="stylesheet" href="style.css">
         <script src="https://kit.fontawesome.com/0cae5511b9.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-        
 </head>
 <body>
     <header>
         <nav id="nav" class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-    
-          <img class="logo" src="Images/Logo.png" alt="Logo" width="50">
-          <button id="barra" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Prodotti</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Contatti</a>
-                  </li>
-                </ul>
-    
-              
-               
-    
-    
-                <form class="d-flex1" role="search">
-                  <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                  <button id="tasto" class="btn btn-outline-success" type="submit">🔍︎</button>
-                </form>
-          </div>
-          <div class="icons">
-            <i class="fas fa-heart"></i> <!-- Icona preferiti -->
-            <i class="fas fa-shopping-cart"></i><!-- Icona carrello -->
-             <i class="fas fa-user-alt"></i>
-          </div>
-        </div>
-       
-      </nav>
-      </header>
-
-
+            <div class="container-fluid">
+        
+              <img class="logo" src="Images/Logo.png" alt="Logo" width="50">
+              <button id="barra" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="Homepage.html">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="Prodotti.html">Prodotti</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="contatti.html">Contatti</a>
+                      </li>
+                    </ul>
+                    <form class="d-flex1" role="search">
+                      <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                      <button id="tasto" class="btn btn-outline-success" type="submit">🔍︎</button>
+                    </form>
+              </div>
+              <div class="icons">
+                <i class="fas fa-heart"></i> <!-- Icona preferiti -->
+                <i class="fas fa-shopping-cart"></i><!-- Icona carrello -->
+                 <i class="fas fa-user-alt"></i><!-- Icona utente -->
+              </div>
+            </div>
+          </nav>
+    </header>
     <div class="carousel">
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -265,39 +256,34 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-<!--footer-->
 <div class="footer-container">
-    <footer class="d-flex justify-content-between align-items-center py-3 my-4 border-top w-100">
-        <!-- Sezione Sinistra -->
-        <div class="col-md-4 d-flex align-items-center">
-            <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-                <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-            </a>
-            <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Company, Inc</span>
+    <footer class="d-flex justify-content-between align-items-start py-3 border-top w-100">
+        
+        <div class="col-md-4 d-flex flex-column">
+            <p><span class="span-weight">Regione Sociale:</span> Regione (esempio).</p>
+            <p><span class="span-weight">Indirizzo:</span> Via Esempio 123, Città, CAP</p>
+            <p><span class="span-weight">Partita IVA:</span> IT12345678901</p>
         </div>
-        <!-- Sezione Centrale-->
-        <div class="privacy-newsletter-container">
+
+        <div class="col-md-4 text-center">
             <p><a href="#">Privacy Policy</a></p>
             <p><a href="#">Newsletter</a></p>
         </div>
-        <!-- Sezione Destra-->
-        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-            <li class="ms-3">
-                <a class="text-body-secondary" href="#">
+
+        <div class="col-md-4 text-end">
+            <div class="social-icons">
+                <a href="#" class="ms-3">
                     <i class="bi bi-twitter"></i>
                 </a>
-            </li>
-            <li class="ms-3">
-                <a class="text-body-secondary" href="#">
+                <a href="#" class="ms-3">
                     <i class="bi bi-instagram"></i>
                 </a>
-            </li>
-            <li class="ms-3">
-                <a class="text-body-secondary" href="#">
+                <a href="#" class="ms-3">
                     <i class="bi bi-facebook"></i>
                 </a>
-            </li>
-        </ul>
+            </div>
+            <p class="mt-2">© 2025 Company, Inc</p>
+        </div>
     </footer>
 </div>
 
