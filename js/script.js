@@ -44,24 +44,25 @@
 // });
 
 
+
 fetch('https://fakestoreapi.com/products')
-            .then(res=>res.json())
-             .then(prods=>{
-                 const products = prods.map(prod=>{
-                    return `
+    .then(res => res.json())
+    .then(prods => {
+        const products = prods.map(prod => {
+            return `
                 <div class="card">
-                     <a href="pag di riferimento per prodotto">
-                    <img class="heart" src="Images/icona cuore.png">
-                     </a>
-                    <img src="${prod.image}" alt="Immagine 1">
-                     <h3 class= "titolo">${prod.title}</h3>
-                  <div class="prezzo-container">
-                       <p class="prezzo"> ${prod.price} </p>
-                     <a href="pag di riferimento per prodotto">
-                       <img class="cart" src="Images/icona carrello.png" alt="Carrello"> 
+                <i class="fas fa-heart heart-icon"></i>
+                    <a href="pag di riferimento per prodotto">
+                    </a>
+                    <img class="immagine" src="${prod.image}" alt="Immagine prodotto">
+                    <h3 class="titolo">${prod.title}</h3>
+                    <div class="prezzo-container">
+                        <p class="prezzo">$${prod.price}</p>
+                           <i class="fas fa-shopping-cart cart-icon"></i>
+                        <a href="pag di riferimento per prodotto">
                         </a>
                     </div>
-                   </div>
+                </div>
                 `
                 }).join('')
 
