@@ -321,7 +321,7 @@ img.heart{
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 20px;
+  padding-top: 20px;
 }
 
 footer {
@@ -329,6 +329,9 @@ footer {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+}
+footer .social-icons, footer p{
+  padding: 0 20px;
 }
 
 footer .social-icons a {

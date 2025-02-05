@@ -48,6 +48,7 @@
 fetch('https://fakestoreapi.com/products')
     .then(res => res.json())
     .then(prods => {
+        console.log("HELLO")
         const products = prods.map(prod => {
             return `
                 <div class="card">
