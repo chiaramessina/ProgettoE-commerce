@@ -8,7 +8,10 @@
     margin-bottom: 50px;
     
   }
-  
+
+  .nav-link{
+    color: #fff !important;
+  }
   
   .navbar .icons {
     color: #F5ECD5;
@@ -25,6 +28,7 @@
     display: flex;
     justify-content: center; 
     align-items: center;
+    position: relative;
     
   }
   .logo {
@@ -37,7 +41,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 180%; 
   }
   
   
@@ -47,6 +50,11 @@
     width: 90%;
     padding: 10px 10px; 
   
+  }
+
+  .d-flex1{
+    position: absolute;
+    right: 20px;
   }
   
   #tasto {
@@ -65,20 +73,19 @@
     font-size: 20px;
   }
   
-  .icons i:hover {
-    color: rgb(0, 0, 0); 
-  }
-
+.icons i:hover {
+  cursor: pointer;
+  color: rgb(0, 0, 0); 
+}
 
 h2 {
-  text-align: center;
-  margin-top: 5%;
-  margin-bottom: 2%;
+text-align: center;
+margin-top: 5%;
+margin-bottom: 2%;
 }
 
 body{
   background-color: #FFFAEC;
-
 }
  
 .carousel-container {
@@ -233,6 +240,7 @@ h2 {
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
+  padding-bottom: 2em;
 }
 
 #chi-siamo-content-container{

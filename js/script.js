@@ -24,7 +24,7 @@
 //             .then(prods=>{
 //                 const products = prods.map(prod=>{
 //                     return `
-//                  <div class="card">
+//                     <div class="card">
 //                     <a href="pag di riferimento per prodotto">
 //                     <img class="heart" src="Images/icona cuore.png">
 //                     </a>
@@ -42,3 +42,5 @@
 
 //                 document.querySelector(".container").innerHTML = products;
 // });
+
+document.querySelectorAll(".review-date").forEach(elem=>elem.textContent = new Date().toLocaleDateString())

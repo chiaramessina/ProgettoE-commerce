@@ -4,8 +4,352 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prodotto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="prodotto.css">
+    <script src="https://kit.fontawesome.com/0cae5511b9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
 </head>
 <body>
+    <header>
+        <nav id="nav" class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <img class="logo" src="Images/Logo.png" alt="Logo" width="50">
+          <button id="barra" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Prodotti</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Contatti</a>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button id="tasto" class="btn btn-outline-success" type="submit">🔍︎</button>
+                </form>
+          </div>
+          <div class="icons">
+            <i class="fas fa-heart" ></i> <!-- Icona preferiti -->
+            <i class="fas fa-shopping-cart"></i><!-- Icona carrello -->
+            <i class="fas fa-user-alt"></i>
+          </div>
+        </div>
+       
+      </nav>
+      </header>
+
+
+
+       
+
+
+
+
+
+
+      <div id="prodotto-container">
+            <div id="img-product-detail-container">
+                <div class="img-fave">
+                    <img src="https://placehold.co/400x550" alt="" class="fav-img">
+                </div>
+
+            <div id="detail-container">
+
+                <div class="selection-container">
+                <div class="label">Colore primario*</div>
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                    <option selected>Seleziona un colore</option>
+
+                    <option value="Verde">Verde</option>
+                    <option value="Blu">Blu</option>
+                    <option value="Fucsia">Fucsia</option>
+                  </select>
+                  <div class="label">Misura*</div>
+                  <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                    <option selected>Seleziona una misura</option>
+                    <option value="XS">XS</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                  </select>
+
+                </div>
+                  <div class="additional-info-container">
+                    <div class="additional-info-day add-info-cont">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <div class="info-day">
+                        Ordina oggi per riceverlo entro il giorno 10-26 feb
+                        </div>
+                    </div>
+                    <div class="additional-info-reso add-info-cont">
+                        <i class="fa-solid fa-box-archive"></i>
+                        <div class="info-reso">
+                            Si accettano resi entro 30 giorni
+                        </div>
+                    </div>
+
+                    <div class="additional-info-sped add-info-cont">
+                        <i class="fa-solid fa-truck"></i>
+                        <div class="info-sped">
+                            Costo di spedizione: € 18,71
+                        </div>
+                    </div>
+
+                    <div class="additional-info-location add-info-cont">
+                        <i class="fa-solid fa-location-pin"></i>
+                        <div class="info-location">
+                            Viene spedito da: Regno Unito
+                        </div>
+                    </div>
+                    
+                  </div>
+                  <div class="price"><span class="item-price">100</span> $ <span class="iva">(IVA inclusa)</span></div>
+
+
+
+                  <!-- Ordina oggi per riceverlo entro il giorno 10-26 feb
+
+                    Si accettano resi
+
+                    entro 30 giorni
+                    Costo di spedizione: € 18,71
+                    Viene spedito da: Regno Unito -->
+
+
+                  <div class="buttons">
+                    
+                    <button type="button" class="btn btn-primary"><i class="fas fa-heart"></i> </button>
+                    <button type="button" class="btn btn-primary add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Aggiungi al carrello </button>
+                  </div>
+
+            </div>
+           
+            </div>
+
+            <div id="general-review-container">
+                <div class="review-header">Ricensioni del prodotto <div data-coreui-read-only="true" data-coreui-toggle="rating" data-coreui-value="3"></div></div>
+                
+                <div class="review-row">
+                    <div class="review-container">
+                        <div class="star-rating user-rating">
+                            <div class="ratings">
+                                <i class="fa fa-star rating-color"></i>
+                                <i class="fa fa-star rating-color"></i>
+                                <i class="fa fa-star rating-color"></i>
+                                <i class="fa fa-star rating-color"></i>
+                                <i class="fa fa-star rating-color"></i>
+                            </div>
+                        </div>
+                        <div class="review-message">Sono molto soddisfatto dell'acquisto. Il prodotto è di buona qualità, facile da usare e funziona perfettamente. Il rapporto qualità/prezzo è ottimo, e la costruzione sembra solida. L'unica piccola pecca è la dimensione, ma non influisce sulle prestazioni. Consigliato!</div>
+                        <div class="review-author-container">
+                            <i class="fa-regular fa-user"></i>
+                            <div class="review-author">John Doe</div>
+                            <div class="review-date"></div>
+                        </div>
+                    </div>
     
+    
+                    <div class="review-container">
+                        <div class="star-rating user-rating">
+                            <div class="ratings">
+                                <i class="fa fa-star rating-color"></i>
+                                <i class="fa fa-star rating-color"></i>
+                                <i class="fa fa-star rating-color"></i>
+                                <i class="fa fa-star rating-color"></i>
+                                <i class="fa fa-star rating-color"></i>
+                            </div>
+                        </div>
+                        <div class="review-message">Sono molto soddisfatto dell'acquisto. Il prodotto è di buona qualità, facile da usare e funziona perfettamente. Il rapporto qualità/prezzo è ottimo, e la costruzione sembra solida. L'unica piccola pecca è la dimensione, ma non influisce sulle prestazioni. Consigliato!</div>
+                        <div class="review-author-container">
+                            <i class="fa-regular fa-user"></i>
+                            <div class="review-author">John Doe</div>
+                            <div class="review-date"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-row">
+                    <div class="review-container">
+                        <div class="star-rating user-rating">
+                            <div class="ratings">
+                                <i class="fa fa-star rating-color"></i>
+                                <i class="fa fa-star rating-color"></i>
+                                <i class="fa fa-star rating-color"></i>
+                                <i class="fa fa-star rating-color"></i>
+                                <i class="fa fa-star rating-color"></i>
+                            </div>
+                        </div>
+                        <div class="review-message">Sono molto soddisfatto dell'acquisto. Il prodotto è di buona qualità, facile da usare e funziona perfettamente. Il rapporto qualità/prezzo è ottimo, e la costruzione sembra solida. L'unica piccola pecca è la dimensione, ma non influisce sulle prestazioni. Consigliato!</div>
+                        <div class="review-author-container">
+                            <i class="fa-regular fa-user"></i>
+                            <div class="review-author">John Doe</div>
+                            <div class="review-date"></div>
+                        </div>
+                    </div>
+    
+    
+                    <div class="review-container">
+                        <div class="star-rating user-rating">
+                            <div class="ratings">
+                                <i class="fa fa-star rating-color"></i>
+                                <i class="fa fa-star rating-color"></i>
+                                <i class="fa fa-star rating-color"></i>
+                                <i class="fa fa-star rating-color"></i>
+                                <i class="fa fa-star rating-color"></i>
+                            </div>
+                        </div>
+                        <div class="review-message">Sono molto soddisfatto dell'acquisto. Il prodotto è di buona qualità, facile da usare e funziona perfettamente. Il rapporto qualità/prezzo è ottimo, e la costruzione sembra solida. L'unica piccola pecca è la dimensione, ma non influisce sulle prestazioni. Consigliato!</div>
+                        <div class="review-author-container">
+                            <i class="fa-regular fa-user"></i>
+                            <div class="review-author">John Doe</div>
+                            <div class="review-date"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="review-row">
+
+
+                    <div class="container">
+                        <div class="rating-container text-center">
+                            <h3 class="rating-title">Lascia una ricensione</h3>
+                            <div class="star-rating">
+                                <input type="radio" id="star5" name="rating" value="5">
+                                <label for="star5" class="fas fa-star"></label>
+                                <input type="radio" id="star4" name="rating" value="4">
+                                <label for="star4" class="fas fa-star"></label>
+                                <input type="radio" id="star3" name="rating" value="3">
+                                <label for="star3" class="fas fa-star"></label>
+                                <input type="radio" id="star2" name="rating" value="2">
+                                <label for="star2" class="fas fa-star"></label>
+                                <input type="radio" id="star1" name="rating" value="1">
+                                <label for="star1" class="fas fa-star"></label>
+                            </div>
+                            <div class="rating-feedback">
+                                <textarea class="form-control" rows="3" placeholder="Sei stato soddisfatto con questo prodotto?"></textarea>
+                            </div>
+                            <button class="submit-rating">Submit Rating</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="similar-container">
+                <h2>Prodotti simili</h2>
+    <!--card promozioni-->
+    <div class="container">
+        <div class="card">
+                <a href="pag di riferimento per prodotto">
+                <img class="heart" src="Images/icona cuore.png">
+                </a>
+                <img src="https://placehold.co/200" alt="Immagine 1">
+                <h3>Nome prodotto</h3>
+                <div class="prezzo-container">
+                    <p class="prezzo">prezzo</p>
+                    <a href="pag di riferimento per prodotto">
+                    <img class="cart" src="Images/icona carrello.png" alt="Carrello"> 
+                </a>
+            </div>
+        </div>
+        <div class="card">
+            <a href="pag di riferimento per prodotto">
+                <img class="heart" src="Images/icona cuore.png">
+            </a>
+            <img src="https://placehold.co/200" alt="Immagine 2">
+            <h3>Nome prodotto</h3>
+            <div class="prezzo-container">
+                <p class="prezzo">prezzo</p>
+                <a href="pag di riferimento per prodotto">
+                    <img class="cart" src="Images/icona carrello.png" alt="Carrello"> 
+                </a>
+            </div>
+        </div>
+        <div class="card">
+            <a href="pag di riferimento per prodotto">
+                <img class="heart" src="Images/icona cuore.png">
+            </a>
+            <img src="https://placehold.co/200" alt="Immagine 3">
+            <h3>Nome prodotto</h3>
+            <div class="prezzo-container">
+                <p class="prezzo">prezzo</p>
+                <a href="pag di riferimento per prodotto">
+                    <img class="cart" src="Images/icona carrello.png" alt="Carrello"> 
+                </a>
+            </div>
+        </div>
+        <div class="card">
+            <a href="pag di riferimento per prodotto">
+                <img class="heart" src="Images/icona cuore.png">
+            </a>
+            <img src="https://placehold.co/200" alt="Immagine 4">
+            <h3>Nome prodotto</h3>
+            <div class="prezzo-container">
+                <p class="prezzo">prezzo</p>
+                <a href="pag di riferimento per prodotto">
+                    <img class="cart" src="Images/icona carrello.png" alt="Carrello"> 
+                </a>
+            </div>
+        </div>
+    </div>
+        </div>
+      </div>
+
+<!--footer-->
+<div class="footer-container">
+    <footer class="d-flex justify-content-between align-items-center py-3 my-4 border-top w-100">
+        <!-- Sezione Sinistra -->
+        <div class="col-md-4 d-flex align-items-center">
+            <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+            <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Company, Inc</span>
+        </div>
+        <!-- Sezione Centrale-->
+        <div class="privacy-newsletter-container">
+            <p><a href="#">Privacy Policy</a></p>
+            <p><a href="#">Newsletter</a></p>
+        </div>
+        <!-- Sezione Destra-->
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3">
+                <a class="text-body-secondary" href="#">
+                    <i class="bi bi-twitter"></i>
+                </a>
+            </li>
+            <li class="ms-3">
+                <a class="text-body-secondary" href="#">
+                    <i class="bi bi-instagram"></i>
+                </a>
+            </li>
+            <li class="ms-3">
+                <a class="text-body-secondary" href="#">
+                    <i class="bi bi-facebook"></i>
+                </a>
+            </li>
+        </ul>
+    </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 </body>
 </html>
