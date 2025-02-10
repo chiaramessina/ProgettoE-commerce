@@ -280,3 +280,19 @@ h2 {
 .tendina {
   background-color: #15fcfc;
 }
+
+#preferitiDiv, #carrelloDiv {
+  position: absolute; /* Posizione fuori dalla navbar */
+  top: 80px; /*  questo valore per posizionarlo sotto la navbar */
+  
+  right: 80px;/*posiziona sotto le icone*/
+  border: 2px solid #00ffee; 
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        width: 300px; 
+        background-color: white;
+        z-index: 999;
+  
+
+}
