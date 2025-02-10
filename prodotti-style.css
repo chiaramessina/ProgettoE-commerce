@@ -78,6 +78,12 @@
 }
 /*fine nav*/
 
+.TuttiProdotti{
+  text-align: center;
+  color: #578E7E;
+  margin: 25px 0 100px 0;
+}
+
 .containerTutti {
   display: flex;
   flex-wrap: wrap;
@@ -106,7 +112,7 @@
   justify-content: center; 
   align-items: center; 
   gap: 15px; 
-  margin-bottom: 25px;
+  margin-bottom: 40px;
 }
 
 
