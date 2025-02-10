@@ -314,43 +314,49 @@ img.heart{
   background-color: #578E7E;
   border-color: #306455;
 }
-.footer-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 20px;
-}
-
+/* Footer */
 footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+  background-color: #306455;  /* Colore verde per il footer */
+  padding: 0;  /* Rimuovi il padding verticale */
+  margin: 0;   /* Rimuovi margini */
 }
 
-footer .social-icons a {
+/* Sezione social media */
+footer .p-4 {
+  background-color: #578E7E;  /* Verde chiaro per la sezione social */
+  padding: 0;  /* Rimuovi padding nella sezione social */
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #7f9f8e; 
+}
+
+/* Icone social */
+footer .fab {
   font-size: 24px;
-  color: #6c757d; 
-  text-decoration: none; 
+  margin: 0 15px;
 }
 
-footer .social-icons a:hover {
-  color: #007bff;
+footer .fab:hover {
+  color: #7f9f8e; 
 }
 
-.privacy-newsletter-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+footer .text-uppercase {
+  font-weight: bold;
+}
+
+footer .text-center {
   text-align: center;
 }
 
-.privacy-newsletter-container p {
-  margin: 0 15px; /* Distanza tra i link */
-}
-
-.bi {
-  font-size: 40px; /*dimensioni icone footer */
+footer .row {
+  margin-left: 0;  
+  margin-right: 0;
+  display: flex;
+  flex-wrap: wrap;  
+  justify-content: space-between;  
 }

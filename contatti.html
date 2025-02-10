@@ -49,12 +49,14 @@
 </header>
 
 
-<div class="flex-container">
+<div class="container">
+  <div class="row">
 
-  <div class="faq-container">
-    <h3>FAQ - Domande frequenti</h3>
-    <div>
-      <ul>
+    <!-- FAQ -->
+    <div class="col-12 col-md-6">
+      <div class="faq-container">
+        <h3>FAQ - Domande frequenti</h3>
+        <ul>
           <li><span class="span-weight">Come posso contattarvi?</span><br>
             Puoi compilare il modulo nella sezione Contatti a destra, tramite chiamata telefonica oppure inviare un'email.</li><br>
           <li><span class="span-weight">Quali metodi di pagamento accettate?</span><br>
@@ -68,14 +70,18 @@
           <li><span class="span-weight">Quando riceverò il mio ordine?</span><br>
             Gli ordini vengono spediti entro 2-3 giorni lavorativi. La consegna avviene generalmente entro 5-7 giorni lavorativi a seconda della destinazione.</li><br>
           <li><span class="span-weight">Cosa devo fare se il mio prodotto arriva danneggiato?</span><br>
-            Se il tuo prodotto arriva danneggiato, ti preghiamo di contattarci entro 48 ore dalla ricezione dell'ordine per avviare il processo di reso o sostituzione. Gli ordini vengono spediti entro 2-3 giorni lavorativi.</li><br>
-      </ul>
+            Se il tuo prodotto arriva danneggiato, ti preghiamo di contattarci entro 48 ore dalla ricezione dell'ordine per avviare il processo di reso o sostituzione.</li><br>
+          <li><span class="span-weight">Quali metodi di pagamento sono accettati?</span><br>
+            Accettiamo diverse opzioni di pagamento tra cui carte di credito e debito, PayPal, e bonifici bancari.</li>
+        </ul>
+      </div>
     </div>
-  </div>
 
-  <div class="contact-container">
-      <h3>Contattaci</h3>
-      <form class="contact-form" action="submit_form.php" method="POST">
+    <!-- Contatti -->
+    <div class="col-12 col-md-6">
+      <div class="contact-container">
+        <h3>Contattaci</h3>
+        <form class="contact-form" action="submit_form.php" method="POST">
           <label for="name">Nome</label>
           <input type="text" id="name" name="name" required>
 
@@ -84,51 +90,145 @@
 
           <label for="message">Messaggio</label>
           <textarea id="message" name="message" rows="5" required></textarea>
+          
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Accetti le <a href="#">Condizioni d'uso</a> e <a href="#">l'informativa sulla Privacy.</a></label>
+          </div>
 
           <input type="submit" value="Invia Messaggio">
-      </form>
+        </form>
 
-      <div class="contact-info">
-        <h3>Altri contatti</h3>
-        <div class="altricontatti-container">
-          <p><span class="span-weight">Email:</span> <a href="mailto:info@esempio.com">info@esempio.com</a></p>
-          <p><span class="span-weight">Telefono:</span> +39 123 456 789</p>
-          <p><span class="span-weight">Indirizzo:</span> Via Esempio 123, Catania, Italia</p>
+        <div class="contact-info">
+          <h3>Altri contatti</h3>
+          <div class="altricontatti-container">
+            <p><span class="span-weight">Email:</span> <a href="mailto:info@esempio.com">info@esempio.com</a></p>
+            <p><span class="span-weight">Telefono:</span> +39 123 456 789</p>
+            <p><span class="span-weight">Indirizzo:</span> Via Esempio 123, Catania, Italia</p>
+          </div>
         </div>
       </div>
+    </div>
+
   </div>
 </div>
 
-<div class="footer-container">
-    <footer class="d-flex justify-content-between align-items-start py-3 border-top w-100">
-        
-        <div class="col-md-4 d-flex flex-column">
-            <p><span class="span-weight">Regione Sociale:</span> Regione (esempio).</p>
-            <p><span class="span-weight">Indirizzo:</span> Via Esempio 123, Città, CAP</p>
-            <p><span class="span-weight">Partita IVA:</span> IT12345678901</p>
-        </div>
+  <!-- Footer -->
+  <footer
+          class="text-center text-lg-start text-muted"
+          style="background-color: #F5ECD5"
+          >
+    <!-- Section: Social media -->
+    <section
+             class="d-flex justify-content-between p-4"
+             style="background-color: #578E7E"
+             >
+      <!-- Left -->
+      <div class="me-5">
+        <span>Get connected with us on social networks:</span>
+      </div>
 
-        <div class="col-md-4 text-center">
-            <p><a href="#">Privacy Policy</a></p>
-            <p><a href="#">Newsletter</a></p>
-        </div>
+      <div>
+        <a href="" class="text-dark me-4">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="text-dark me-4">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="text-dark me-4">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="text-dark me-4">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="text-dark me-4">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="text-dark me-4">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </section>
 
-        <div class="col-md-4 text-end">
-            <div class="social-icons">
-                <a href="#" class="ms-3">
-                    <i class="bi bi-twitter"></i>
-                </a>
-                <a href="#" class="ms-3">
-                    <i class="bi bi-instagram"></i>
-                </a>
-                <a href="#" class="ms-3">
-                    <i class="bi bi-facebook"></i>
-                </a>
-            </div>
-            <p class="mt-2">© 2025 Company, Inc</p>
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold">Company name</h6>
+            <p>
+              Here you can use rows and columns to organize your footer
+              content. Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Products</h6>
+            <p>
+              <a href="#!" class="text-dark">MDBootstrap</a>
+            </p>
+            <p>
+              <a href="#!" class="text-dark">MDWordPress</a>
+            </p>
+            <p>
+              <a href="#!" class="text-dark">BrandFlow</a>
+            </p>
+            <p>
+              <a href="#!" class="text-dark">Bootstrap Angular</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Useful links</h6>
+            <p>
+              <a href="#!" class="text-dark">Your Account</a>
+            </p>
+            <p>
+              <a href="#!" class="text-dark">Become an Affiliate</a>
+            </p>
+            <p>
+              <a href="#!" class="text-dark">Shipping Rates</a>
+            </p>
+            <p>
+              <a href="#!" class="text-dark">Help</a>
+            </p>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Contact</h6>
+            <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+            <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
+            <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+            <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+          </div>
+          <!-- Grid column -->
         </div>
-    </footer>
-</div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div
+         class="text-center p-3"
+         style="background-color: rgba(0, 0, 0, 0.2)"
+         >
+      © 2020 Copyright:
+      <a class="text-dark" href="https://mdbootstrap.com/"
+         >MDBootstrap.com</a
+        >
+    </div>
+    <!-- Copyright -->
+  </footer>
 
 
 </body>
