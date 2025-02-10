@@ -6,26 +6,19 @@ function getQueryParam(param) {
 
 
 const productId = getQueryParam('id');
-console.log('ID del prodotto:', productId);
-let category = "";
-
 const url = `https://fakestoreapi.com/products/${productId}`;
 
 fetch(url)
   .then(response => response.json())
   .then(product => {
-    category +=product.category;
-
     const img = document.querySelector(".fav-img");
     img.src = product.image;
     document.querySelector(".item-price").textContent = product.price;
     document.querySelector(".item-name").textContent = product.title;
     document.querySelector(".item-description").textContent = product.description;
-    getSimilar(category);
+    getSimilar(product.category);
   })
   .catch(error => console.error('Errore nel recupero del prodotto:', error));
-
-
 
   const getSimilar = (cat)=>{
 
