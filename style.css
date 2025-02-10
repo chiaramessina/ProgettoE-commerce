@@ -329,6 +329,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  background-color: #F5ECD5;
 }
 footer .social-icons, footer p{
   padding: 0 20px;

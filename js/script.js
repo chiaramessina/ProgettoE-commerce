@@ -48,14 +48,14 @@
 fetch('https://fakestoreapi.com/products')
     .then(res => res.json())
     .then(prods => {
-        console.log("HELLO")
+        console.log(prods);
         const products = prods.map(prod => {
             return `
                 <div class="card">
                 <i class="fas fa-heart heart-icon"></i>
-                    <a href="pag di riferimento per prodotto">
-                    </a>
+                    <a href="prodotto.html?id=${prod.id}">
                     <img class="immagine" src="${prod.image}" alt="Immagine prodotto">
+                    </a>
                     <h3 class="titolo">${prod.title}</h3>
                     <div class="prezzo-container">
                         <p class="prezzo">$${prod.price}</p>
@@ -69,3 +69,12 @@ fetch('https://fakestoreapi.com/products')
 
                document.querySelector(".containerTutti").innerHTML = products;
  });
+
+ function getProduct (id){
+    const url = "https://fakestoreapi.com/products/";
+    fetch(url+id)
+    .then(res => res.json())
+    .then(prod => {
+      document.querySelector(".fav-img").src= `${prod.image}`
+ });
+ }

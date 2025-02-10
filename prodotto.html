@@ -26,13 +26,13 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="Homepage.html">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Prodotti</a>
+                    <a class="nav-link active" aria-current="page" href="Prodotti.html">Prodotti</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Contatti</a>
+                    <a class="nav-link active" aria-current="page" href="contatti.html">Contatti</a>
                   </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -59,14 +59,18 @@
 
 
 
-      <div id="prodotto-container">
+      <div id="prodotto-container" class="row">
             <div id="img-product-detail-container">
                 <div class="img-fave">
                     <img src="https://placehold.co/400x550" alt="" class="fav-img">
+                    
                 </div>
 
             <div id="detail-container">
 
+
+                <div class="item-name">Nome prodotto</div>
+                <div class="item-description"></div>
                 <div class="selection-container">
                 <div class="label">Colore primario*</div>
                 <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
@@ -251,7 +255,7 @@
             <div class="similar-container">
                 <h2>Prodotti simili</h2>
     <!--card promozioni-->
-    <div class="container">
+    <div class="container promo-container">
         <div class="card">
                 <a href="pag di riferimento per prodotto">
                 <img class="heart" src="Images/icona cuore.png">
@@ -342,11 +346,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-<script src="/js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
+<script src="js/prodotto.js"></script>
  
 </body>
 </html>
