@@ -1,21 +1,12 @@
 function getQueryParam(param) {
-    /* new URLSearchParams(...) crea un nuovo oggetto che facilita la manipolazione dei parametri della query string, 
-     rendendo semplice l'accesso ai singoli valori. */
-    // 'window.location.search' restituisce tutto ciò che segue il '?' nell'URL (ovvero la QUERYSTRING)
     const params = new URLSearchParams(window.location.search); 
-    console.log(params);
-    // Utilizza il metodo 'get' dell'oggetto URLSearchParams per ottenere il valore associato al parametro passato
-    // Se il parametro non esiste, il metodo restituisce null
     return params.get(param);
 }
 
 
-// Recupera l'id del prodotto dall'URL
+
 const productId = getQueryParam('id');
 console.log('ID del prodotto:', productId);
-
-// Effettua la chiamata API per ottenere i dettagli del prodotto
-
 let category = "";
 
 const url = `https://fakestoreapi.com/products/${productId}`;
