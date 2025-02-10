@@ -1,0 +1,171 @@
+/* CSS pagina prodotto */
+
+.img-fave{
+    position: relative;
+  }
+  
+  .fav-heart{
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    z-index: 1;
+  }
+  
+  /* Review system style */
+  
+  #img-product-detail-container{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  #detail-container{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+  }
+  
+  .review-author-container{
+    margin-top: 2em;
+    display: flex;
+    gap: 2em;
+    align-items:first baseline;
+  }
+  
+  .add-to-cart-btn{
+    min-width: 280px;
+  }
+  
+  .add-info-cont{
+    display: flex;
+    margin: .325em;
+  }
+  .add-info-cont i{
+    margin-right: 1em;
+    width: 16px;
+  }
+  
+  .price{
+    font-size: 2em;
+  }
+  
+  #prodotto-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  
+  #general-review-container{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    border-bottom: 1px solid rgba(255, 166, 0, 0.351);
+  }
+  .review-row{
+    display: flex;
+  }
+  .review-container{
+    padding: 2em 4em;
+  }
+  
+  .review-header{
+    padding-left: 2em;
+    padding-top: 1.125em;
+    margin-top: 4em;
+    font-size: 24px;
+    border-top: 1px solid rgba(255, 166, 0, 0.351);
+  }
+  
+  .review-message{
+    font-size: 18px;
+  }
+  
+  /* Review */
+  
+  .rating-container {
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 10px 10px 20px #d1d1d1,
+               -10px -10px 20px #ffffff;
+    min-width: 700px;
+    margin: 2rem auto;
+  }
+  
+  .star-rating {
+    direction: rtl;
+    display: inline-block;
+    padding-bottom: 20px;
+  }
+  
+  .star-rating input {
+    display: none;
+  }
+  
+  .star-rating label {
+    color: #bbb;
+    cursor: pointer;
+    font-size: 30px;
+    padding: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .user-rating label{
+    font-size: 16px;
+  }
+  
+  .star-rating label:hover,
+  .star-rating label:hover ~ label,
+  .star-rating input:checked ~ label {
+    color: #fbc634;
+  }
+  
+  .rating-title {
+    color: #2d3436;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+  
+  .rating-feedback {
+    margin-top: 1.5rem;
+    color: #636e72;
+  }
+  
+  .submit-rating {
+    background: linear-gradient(145deg, #f7b731, #f0932b);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    color: white;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .submit-rating:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(247, 183, 49, 0.4);
+  }
+  
+  .ratings i {
+    color: #cecece;
+    font-size: 16px;
+  }
+    
+  .rating-color {
+    color: #fbc634 !important;
+  }
+    
+  .review-count {
+    font-weight: 400;
+    margin-bottom: 2px;
+    font-size: 24px !important;
+  }
+    
+  .small-ratings i {
+    color: #cecece;
+  }
+
+  @media (min-width: 1025px) {
+    .h-custom {
+    height: 100vh !important;
+    }
+    }

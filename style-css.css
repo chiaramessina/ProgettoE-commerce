@@ -1,0 +1,48 @@
+#nav{
+  display: flex;
+  justify-content: center;
+   background-color: #578E7E  !important;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /*sfocatura sotto la navbar */
+}
+
+  .navbar .nav-link {
+    color: blue; 
+  }
+  
+  
+  .navbar .nav-link:hover {
+    color: #F5ECD5  ; 
+  }
+  
+  
+  .navbar .icons  {
+    color: #F5ECD5 ; 
+    margin-left: 15px; 
+    font-size: 1.5em; 
+  }
+  
+  .navbar .icons :hover {
+    color: #f1c40f; 
+  }
+  
+
+  .navbar img {
+    border-radius: 50%; 
+  
+  }
+  .navbar .btn-outline-success {
+    color: #F5ECD5 ;
+    
+  }
+  #barra {
+    color: blue!important;
+  }
+#tasto {
+  
+  background-color:#3D3D3D   ;
+
+}
+
+  
+  
+  
