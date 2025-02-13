@@ -44,10 +44,11 @@
 // });
 fetch('https://fakestoreapi.com/products')
     .then(res => res.json())
-    .then(prods => {
-        const randomProducts = prods.sort(() => Math.random() - 0.5).slice(0, 4);
+    .then(prodsResults => {   //per ogni prods
+        const prodottiDaVisualizzare = prodsResults.slice(0,4); 
+       
 
-        const products = randomProducts.map(prod => {
+        const cardProducts = prodottiDaVisualizzare.map(prod => {
             return `
                 <div class="card">
                 <i class="fas fa-heart heart-icon"></i>
@@ -56,8 +57,11 @@ fetch('https://fakestoreapi.com/products')
                     <img class="immagine" src="${prod.image}" alt="Immagine prodotto">
                     <h3 class="titolo">${prod.title}</h3>
                     <div class="prezzo-container">
-                        <p class="prezzo">$${prod.price}</p>
-                           <i class="fas fa-shopping-cart cart-icon"></i>
+                        <p class="prezzo">
+                            <span class="prezzo-originale">$${prod.price}</span>
+                            <span class="prezzo-scontato">$${(prod.price * 0.8).toFixed(2)}</span> 
+                        </p>
+                        <i class="fas fa-shopping-cart cart-icon"></i>
                         <a href="pag di riferimento per prodotto">
                         </a>
                     </div>
@@ -65,9 +69,10 @@ fetch('https://fakestoreapi.com/products')
                 `
                 }).join('')
 
-               document.querySelector(".container-promozioni").innerHTML = products;
- });
-
+               document.querySelector(".container-promozioni").innerHTML = cardProducts;
+    });
+//.toFixed(2) serve per fare in modo che il numero che appare sia composto da 2 cifre dopo la virgola
+//prod.price * 0.8 mostra 80% prezzo prodotto originale
 
  fetch('https://fakestoreapi.com/products')
     .then(res => res.json())
@@ -94,6 +99,3 @@ fetch('https://fakestoreapi.com/products')
 
                document.querySelector(".container-disponibili").innerHTML = products;
  });
-
-
-
