@@ -42,4 +42,5 @@ fetch('https://fakestoreapi.com/products')
 
         // per fare in modo che compaiano sia le card degli scontati, sia quelle non scontate
         document.querySelector(".containerTutti").innerHTML = cardScontati + cardNonScontati;
+        
     });
