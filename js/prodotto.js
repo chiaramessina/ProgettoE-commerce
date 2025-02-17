@@ -8,6 +8,7 @@ function getQueryParam(param) {
 const productId = getQueryParam('id');
 const url = `https://fakestoreapi.com/products/${productId}`;
 
+
 fetch(url)
   .then(response => response.json())
   .then(product => {
@@ -16,6 +17,8 @@ fetch(url)
     document.querySelector(".item-price").textContent = product.price;
     document.querySelector(".item-name").textContent = product.title;
     document.querySelector(".item-description").textContent = product.description;
+
+
     getSimilar(product.category);
   })
   .catch(error => console.error('Errore nel recupero del prodotto:', error));
