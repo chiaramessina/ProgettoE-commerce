@@ -1,11 +1,11 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
+
 #nav {
   background-color: #578E7E !important;
   margin-bottom: 50px;
-  
 }
 
 .navbar-nav {
@@ -14,6 +14,7 @@
   width: 100%;
   margin-right: 30px;
 }
+
 .navbar-nav .nav-item {
   margin: 0 15px;
   align-items: center;
@@ -28,34 +29,30 @@
 #navbarSupportedContent {
   display: flex;
   position: relative;
-  
 }
+
 .logo {
   margin: 5px 30px;
   margin-left: 30px;
   margin-bottom: 5px;
 }
 
-
 #navbarSupportedContent form {
   display: flex;
   align-items: center;
-  
 }
-.d-flex1{
+
+.d-flex1 {
   position: absolute;
   right: 20px;
-
 }
 
 #navbarSupportedContent input.form-control {
   display: flex;
-  border-radius: 25px; 
+  border-radius: 25px;
   width: 90%;
-  padding: 10px 10px; 
+  padding: 10px 10px;
   height: 40px;
-  
-
 }
 
 #tasto {
@@ -67,7 +64,6 @@
   font-size: 17px;
   border: none;
   margin-left: 10px;
-  
 }
 
 .icons {
@@ -77,99 +73,161 @@
 }
 
 .icons i:hover {
-  color: rgb(0, 0, 0); 
+  color: rgb(0, 0, 0);
   cursor: pointer;
 }
-/*fine  header*/
+/*fine nav*/
+
+.TuttiProdotti{
+  text-align: center;
+  color: #578E7E;
+  margin: 25px 0 100px 0;
+}
 
 .containerTutti {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; 
-    padding: auto;
-    margin-bottom: 5%;
-    gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px; 
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .card {
-    width: 200px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    text-align: center;
+  width: 250px; 
+  height: 350px; 
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  margin-bottom: 30px; 
+  transition: transform 0.2s ease-in-out;
 }
-.card img {
-    width: 100%;
-    border-radius: 10px;
 
+
+.filtri {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  gap: 15px; 
+  margin-bottom: 40px;
 }
-.card h3 {
-    margin: 10px 0;
-    font-size: 20px;
+
+
+select.form-select {
+  border-radius: 25px;
 }
+
+
+button {
+  margin-left: 20px; 
+  font-size: 15px;
+  padding: 10px 10px;
+  border-radius: 25px; 
+}
+
+
+/*inizio prodotti*/
+
+.card .immagine {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer; 
+}
+
+
+.card h3 {        
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 18px;      
+  margin: 10px 0;
+  cursor: pointer; 
+}
+
 .prezzo-container {
   display: flex;
-  justify-content: center;
-  align-items: center; 
+  justify-content: space-between; 
+  margin:17px 5px 0 5px;
+  align-items: baseline;
 }
 
 .prezzo {
-  margin-right: 10px;
+  font-size: 20px;
+  font-weight: bold; 
+  margin-right: auto;
 }
 
-img.cart {
-  width: 20%;
-  float: right;
-}
-img.heart{
-  width:15%;
-  float: left;
+.card .cart-icon {
+  font-size: 20px; 
+  color: black; 
+  cursor: pointer; 
+  margin-left: auto;
 }
 
+.heart-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 25px;
+  color: red;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer; 
+}
 
+.card:hover .heart-icon {
+  opacity: 1;
+}
 
+/* footer */
+/* Footer */
+footer {
+  background-color: #306455;  /* Colore verde per il footer */
+  padding: 0;  /* Rimuovi il padding verticale */
+  margin: 0;   /* Rimuovi margini */
+}
 
+/* Sezione social media */
+footer .p-4 {
+  background-color: #578E7E;  /* Verde chiaro per la sezione social */
+  padding: 0;  /* Rimuovi padding nella sezione social */
+}
 
+footer a {
+  text-decoration: none;
+}
 
+footer a:hover {
+  color: #7f9f8e; 
+}
 
+/* Icone social */
+footer .fab {
+  font-size: 24px;
+  margin: 0 15px;
+}
 
-.footer-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%; 
-    padding: 20px 0;
-  }
-  
-  footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 10px 0;
-    background-color:  #F5ECD5 ;
-  }
-  
-  .privacy-newsletter-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .privacy-newsletter-container p {
-    margin: 0 15px; /* Distanza tra i link */
-  }
-  
-  .bi {
-    font-size: 40px; /*dimensioni icone footer */
-  }
-  
-  h2 {
-    text-align: center;
-    margin-top: 5%;
-    margin-bottom: 2%;
-  }
-  /*fine  footer*/
+footer .fab:hover {
+  color: #7f9f8e; 
+}
+
+footer .text-uppercase {
+  font-weight: bold;
+}
+
+footer .text-center {
+  text-align: center;
+}
+
+footer .row {
+  margin-left: 0;  
+  margin-right: 0;
+  display: flex;
+  flex-wrap: wrap;  
+  justify-content: space-between;  
+}

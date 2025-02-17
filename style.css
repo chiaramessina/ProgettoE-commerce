@@ -65,6 +65,70 @@
   width: 40px;
   height: 40px;
   font-size: 17px;
+}
+#nav {
+  background-color: #578E7E !important;
+  margin-bottom: 50px;
+  
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-right: 30px;
+}
+.navbar-nav .nav-item {
+  margin: 0 15px;
+  align-items: center;
+}
+
+.navbar .icons {
+  color: #F5ECD5;
+  margin-left: 15px;
+  font-size: 25px;
+}
+
+#navbarSupportedContent {
+  display: flex;
+  position: relative;
+  
+}
+.logo {
+  margin: 5px 30px;
+  margin-left: 30px;
+  margin-bottom: 5px;
+}
+
+
+#navbarSupportedContent form {
+  display: flex;
+  align-items: center;
+  
+}
+.d-flex1{
+  position: absolute;
+  right: 20px;
+
+}
+
+#navbarSupportedContent input.form-control {
+  display: flex;
+  border-radius: 25px; 
+  width: 90%;
+  padding: 10px 10px; 
+  height: 40px;
+  
+
+}
+
+#tasto {
+  border-radius: 70%;
+  background-color: #3D3D3D;
+  color: white;
+  width: 40px;
+  height: 40px;
+  font-size: 17px;
   border: none;
   margin-left: 10px;
   
@@ -80,18 +144,30 @@
   color: rgb(0, 0, 0); 
   cursor: pointer;
 }
+.icons {
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
+}
 
-/*fine header */
+.icons i:hover {
+  color: rgb(0, 0, 0); 
+  cursor: pointer;
+}
 
 h2 {
-  text-align: center;
-  margin-top: 5%;
-  margin-bottom: 2%;
+text-align: center;
+margin-top: 5%;
+margin-bottom: 2%;
 }
 
 body{
-  background-color: #FFFAEC;
+background-color: #FFFAEC;
 
+}
+
+.span-weight{
+  font-weight:bold;
 }
  
 .carousel-container {
@@ -108,7 +184,8 @@ body{
   }
   
 .carousel-item img {
-    width: 100%;  
+    width: 100%; 
+    margin-bottom: 70px; 
     
   }
 .container {
@@ -126,6 +203,12 @@ body{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f5ecd5;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .card img {
     width: 100%;
@@ -152,51 +235,6 @@ img.heart{
   width:15%;
   float: left;
 }
-
-/*inizio footer*/
-.footer-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%; 
-  padding: 20px 0;
-}
-
-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 10px 0;
-  background-color:  #F5ECD5 ;
-}
-
-.privacy-newsletter-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.privacy-newsletter-container p {
-  margin: 0 15px; /* Distanza tra i link */
-}
-
-.bi {
-  font-size: 40px; /*dimensioni icone footer */
-}
-
-h2 {
-  text-align: center;
-  margin-top: 5%;
-  margin-bottom: 2%;
-}
-/*fine  footer*/
-/* CSS OLEKSANDR NON TOCCARE */
-
-
-
 .category-item{
   border-radius: 50%;
 }
@@ -225,6 +263,7 @@ h2 {
 
 #category-header, #chi-siamo-title{
   text-align: center;
+  margin-bottom: 50px;
 }
 
 .content-title{
@@ -242,12 +281,155 @@ h2 {
   color: white;
   border-radius: 5px;
 }
+/*fine categorie*/
+.TuttiProdotti{
+  text-align: center;
+  color: #578E7E;
+  margin-bottom: 70px;
+}
+
+.TuttiProdotti, h2 {
+  margin-top: 8%;
+    margin-bottom: 3%;
+}
+
+.containerTutti {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px; 
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.card {
+  width: 250px; 
+  height: 350px; 
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  margin-bottom: 30px; 
+  transition: transform 0.2s ease-in-out;
+  background-color: #f5ecd5;
+}
+
+
+.filtri {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  gap: 15px; 
+  margin-bottom: 40px;
+}
+
+
+select.form-select {
+  border-radius: 25px;
+}
+
+
+button {
+  margin-left: 20px; 
+  font-size: 15px;
+  padding: 10px 10px;
+  border-radius: 25px; 
+}
+
+
+/*inizio prodotti*/
+.card {
+  background-color: #f5ecd5;
+}
+.card .immagine {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer; 
+}
+
+.card h3 {        
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 18px;      
+  margin: 10px 0;
+  cursor: pointer; 
+}
+
+.prezzo-container {
+  display: flex;
+  justify-content: space-between; 
+  margin: 17px 5px 0 5px;
+  align-items: baseline;
+}
+
+.prezzo {
+  font-size: 20px;
+  font-weight: bold; 
+  margin-right: auto;
+}
+
+.prezzo-originale {
+  text-decoration: line-through;
+}
+.prezzo-scontato {
+  color: red;                    
+  font-size: 20px;  
+}
+
+.card .cart-icon {
+  font-size: 20px; 
+  color: black; 
+  cursor: pointer; 
+  margin-left: auto;
+}
+
+.heart-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 25px;
+  color: red;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer; 
+}
+
+.card:hover .heart-icon {
+  opacity: 1;
+}
+
+.container-disponibili, .container-promozioni {
+  display: flex;
+  flex-wrap: wrap;   
+  gap: 20px;         
+  justify-content: center;  
+}
+
+.discoverAll {
+  text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+
+/* inizio chi siamo*/
+
+#question-title {
+  margin-top: 30px;;
+}
 #chi-siamo-container{
   background-color: #F5ECD5 ;
   display: flex;
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
+  padding-bottom: 2em;
 }
 
 #chi-siamo-content-container{
@@ -261,38 +443,30 @@ h2 {
 .chi-siamo-column-container{
   max-width: 450px;
 }
+#category-header, #chi-siamo-title {
+  margin: 15px 0 6px 0;
+}
 
 .content-text{
   padding: 25px;
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+
+.content-title {
+  text-align: center;
 }
 
 .btn-primary{
   background-color: #306455;
   border-color: #578E7E;
+  border-radius: 25px;
+  margin-top: 20px;
+  margin-bottom: 20px;;
+  
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary:active:hover{
   background-color: #578E7E;
   border-color: #306455;
-}
-
-
-.tendina {
-  background-color: #15fcfc;
-}
-
-#preferitiDiv, #carrelloDiv {
-  position: absolute; /* Posizione fuori dalla navbar */
-  top: 80px; /*  questo valore per posizionarlo sotto la navbar */
-  
-  right: 80px;/*posiziona sotto le icone*/
-  border: 2px solid #00ffee; 
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        padding: 20px;
-        width: 300px; 
-        background-color: white;
-        z-index: 999;
-  
-
 }

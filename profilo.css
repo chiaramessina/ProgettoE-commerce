@@ -1,0 +1,26 @@
+
+.rounded-circle {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+.form-control {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+    border-radius: 5px; 
+}
+
+.form-control:focus {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); 
+}
+
+.profile-button {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+    border: none;
+}
+
+.profile-button:hover {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.profile-button:focus {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}

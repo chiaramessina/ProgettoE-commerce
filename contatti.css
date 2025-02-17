@@ -1,0 +1,123 @@
+.h2-contatti {
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    font-size: 32px;
+    color: #306455;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 40px;
+}
+
+.faq-container, .contact-container {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq-container div {
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq-container span {
+    font-size: 18px;
+}
+
+.altricontatti-container {
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq-container h3, .contact-container h3 {
+    font-size: 24px;
+    color: #306455;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;     
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: white;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.contact-form label {
+    font-size: 16px;
+    color: #306455;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.contact-form input[type="submit"] {
+    background-color: #306455;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+}
+
+.contact-form input[type="submit"]:hover {
+    background-color: #578E7E;
+}
+
+.contact-info {
+    text-align: center; 
+    margin-top: 40px;
+    font-size: 16px;
+}
+
+.contact-info h3 {
+    text-align: center; 
+    margin: 10px 0;
+}
+
+.contact-info a {
+    color: #306455;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    color: #578E7E;
+}
