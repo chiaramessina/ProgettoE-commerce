@@ -54,6 +54,7 @@ fetch('https://fakestoreapi.com/products')
 
                document.querySelector(".container-disponibili").innerHTML = products;
                document.querySelector(".container-promozioni").addEventListener("click", (e)=>addToCart(e))
+               document.querySelector(".container-disponibili").addEventListener("click", (e)=>addToCart(e))
  });
 
  const addToCart = (e)=>{

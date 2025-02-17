@@ -18,6 +18,7 @@ fetch(url)
     document.querySelector(".item-name").textContent = product.title;
     document.querySelector(".item-description").textContent = product.description;
     document.querySelector(".add-to-cart-btn").setAttribute("data-id", product.id)
+    document.querySelector(".add-to-cart-btn").addEventListener("click", (e)=>addToCart(e) )
 
 
     getSimilar(product.category);
