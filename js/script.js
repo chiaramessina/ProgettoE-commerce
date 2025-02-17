@@ -46,8 +46,6 @@ fetch('https://fakestoreapi.com/products')
     .then(res => res.json())
     .then(prodsResults => {   //per ogni prods
         const prodottiDaVisualizzare = prodsResults.slice(0,4); 
-       
-
         const cardProducts = prodottiDaVisualizzare.map(prod => {
             return `
                 <div class="card">
