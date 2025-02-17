@@ -17,6 +17,7 @@ fetch(url)
     document.querySelector(".item-price").textContent = product.price;
     document.querySelector(".item-name").textContent = product.title;
     document.querySelector(".item-description").textContent = product.description;
+    document.querySelector(".add-to-cart-btn").setAttribute("data-id", product.id)
 
 
     getSimilar(product.category);
@@ -39,15 +40,34 @@ fetch(url)
                     <h3 class="titolo">${prod.title}</h3>
                     <div class="prezzo-container">
                         <p class="prezzo">$${prod.price}</p>
-                           <i class="fas fa-shopping-cart cart-icon"></i>
+                           <i class="fas fa-shopping-cart cart-icon" data-id = ${prod.id} onclick = "addToCart(e)"></i>
                         <a href="pag di riferimento per prodotto">
                         </a>
                     </div>
                 </div>
                 `
                 }).join('')
-
                document.querySelector(".promo-container").innerHTML = products;
+               document.querySelector(".promo-container").addEventListener("click", (e)=>addToCart(e))
  });
 
   }
+
+  const addToCart = (e)=>{
+    console.log(e.target.classList)
+
+    if(e.target.classList.contains("cart-icon")){
+    
+        fetch('https://fakestoreapi.com/products/' + e.target.getAttribute("data-id"))
+                .then(res=>res.json())
+                .then(json=>{
+                    if(localStorage.key(json.id)) console.log("present")
+                       
+                    localStorage.setItem(json.id, JSON.stringify(json))
+                    localStorage.setItem(`q-${json.id}`, 1)
+                    location.reload();
+                })               
+                }else return;
+    
+    }
+  

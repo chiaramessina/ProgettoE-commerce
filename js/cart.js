@@ -105,6 +105,7 @@ const getTotalPrice = ()=>{
       document.querySelector(".checkout-btn").textContent = parseFloat(totalCart).toFixed(2);
 }
 
+
 getCartItem();
 updateQuantValues();
 
