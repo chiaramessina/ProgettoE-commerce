@@ -1,4 +1,7 @@
 /* CSS pagina prodotto */
+body {
+  overflow-x: hidden;
+}
 
 .img-fave{
     position: relative;
@@ -98,11 +101,11 @@
   /* Review */
   
   .rating-container {
-    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    background: linear-gradient(145deg, #f5ecd5, #eee9d9);
     border-radius: 20px;
     padding: 2rem;
     box-shadow: 10px 10px 20px #d1d1d1,
-               -10px -10px 20px #ffffff;
+               -10px -10px 20px #e0e0e0;
     min-width: 700px;
     margin: 2rem auto;
   }
@@ -147,7 +150,8 @@
   }
   
   .submit-rating {
-    background: linear-gradient(145deg, #f7b731, #f0932b);
+    background-color: #578E7E;
+    border-color: #306455;
     border: none;
     padding: 10px 25px;
     border-radius: 25px;
@@ -159,7 +163,8 @@
   
   .submit-rating:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(247, 183, 49, 0.4);
+    box-shadow: 0 5px 15px #578E7E;;
+
   }
   
   .ratings i {
