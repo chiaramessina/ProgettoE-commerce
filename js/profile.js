@@ -211,7 +211,24 @@ const checkLogin = ()=>{
     };
     console.log(newUser)
     addUser(newUser);
+    clear();
+    closeModal();
+    function clear(){
+      document.getElementById('register-username').value='',
+      document.getElementById('register-password').value='',
+      document.getElementById('register-firstname').value='',
+      document.getElementById('register-email').value='',
+      document.getElementById('register-lastname').value=''
+    }
   });
+  function closeModal() {
+    const modal = document.getElementById('registerModal');
+    const modalInstance = bootstrap.Modal.getInstance(modal);
+    
+    if (modalInstance) {
+        modalInstance.hide(); // Chiude il modal
+    }
+}
 
 // Funzione per effettuare il logout
   function logout() {
