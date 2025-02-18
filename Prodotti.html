@@ -56,25 +56,25 @@
       </div>
       <div class="filtri">
         <div class="sceltaCategoria">
-          <select class="form-select form-select-sm" aria-label="Small select example">
-            <option selected>Categorie</option>
-            <option value="1">Abbigliamento Uomo</option>
-            <option value="2">Abbigliamento Donna</option>
-            <option value="3">Elettronica</option>
-            <option value="4">Gioielleria</option>
+          <select class="form-select form-select-sm category-filter" aria-label="Small select example">
+            <option value="empty" selected>Categorie</option>
+            <option value="men's clothing">Abbigliamento Uomo</option>
+            <option value="women's clothing">Abbigliamento Donna</option>
+            <option value="electronics">Elettronica</option>
+            <option value="jewelery">Gioielleria</option>
           </select>
         </div>
 
         <div class="Prezzo">
-          <select class="form-select form-select-sm" aria-label="Small select example">
-            <option selected>Prezzo</option>
-            <option value="1">0$ to 50$</option>
-            <option value="2">50$ to 100$</option>
-            <option value="3">150$ to 250$</option>
-            <option value="4">250$ to 300$</option>
+          <select class="form-select form-select-sm price-filter" aria-label="Small select example">
+            <option value="0" selected>Prezzo</option>
+            <option value="1">$0 to $50</option>
+            <option value="2">$50 to $100</option>
+            <option value="3">$150 to $250</option>
+            <option value="4">$250 to Infinity</option>
           </select>          
         </div>
-        <button type="button" class="btn btn-primary"style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+        <button type="button" class="btn btn-primary"style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="getFiltered()">
     Filtra</button>     
   </div>
   
