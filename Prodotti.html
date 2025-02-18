@@ -98,10 +98,25 @@
                   <button id="tasto" class="btn btn-outline-success" type="submit">🔍︎</button>
                 </form>
           </div>
-          <div class="icons">
+          <div class="icons d-flex align-items-center" id="logged-icons" >  
+            <div class="dropdown">
+             <i class="fas fa-user-alt dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"></i>
+             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                 <li><a class="dropdown-item" href="profilo.html">Profilo</a></li>
+                 <li><a class="dropdown-item" href="#">Impostazioni</a></li>
+                 <li><a class="dropdown-item" href="#">Messaggi...</a></li>
+                 <li><a class="dropdown-item" href="#" id="logoutBtn">Log out</a></li>
+             </ul>
+         </div>
+             <i class="fas fa-heart"></i>
+             <i class="fas fa-shopping-cart" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"></i>
+         </div>
+
+          <div class="icons" id="non-logged-icons">
+            <i class="fas fa-user-alt" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
             <i class="fas fa-heart"></i> <!-- Icona preferiti -->
             <i class="fas fa-shopping-cart" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"></i>
-             <i class="fas fa-user-alt" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+             
           </div>
         </div>
        

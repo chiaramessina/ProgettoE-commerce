@@ -7,17 +7,20 @@ function printOutput(data) {
 
 const checkLogin = ()=>{
     const token = localStorage.getItem("authToken");
-     
+
     fetch('http://localhost:8080/api/users/checkLogin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer ' + token
+          'Authorization': token ? 'Bearer ' + token  : null
         },
         body: JSON.stringify({ username, password })
     })
     .then(response => {
         if (!response.ok) {
+            console.log(response)
+            // document.getElementById("logged-icons").style.display = "none"
+            // document.getElementById("non-logged-icons").style.display = "block"
             throw new Error('Login fallito');
         }
         return response.json();
@@ -31,6 +34,8 @@ const checkLogin = ()=>{
           // Mostra il pulsante Logout e nasconde il form di login
           document.getElementById("logoutButton").style.display = "block";
           document.getElementById("loginForm").style.display = "none";
+          document.getElementById("logged-icons").setAttribute('style', 'display: flex !important');
+          document.getElementById("non-logged-icons").setAttribute('style', 'display: none !important');
         }
     })
     .catch(error => {
@@ -66,6 +71,8 @@ const checkLogin = ()=>{
           // Mostra il pulsante Logout e nasconde il form di login
           document.getElementById("logoutButton").style.display = "block";
           document.getElementById("loginForm").style.display = "none";
+         document.getElementById("logged-icons").setAttribute('style', 'display: flex !important');
+         document.getElementById("non-logged-icons").setAttribute('style', 'display: none !important');
         }
     })
     .catch(error => {
@@ -164,6 +171,10 @@ const checkLogin = ()=>{
     logout();
   });
 
+  document.getElementById('logoutBtn').addEventListener('click', function() {
+    logout();
+  });
+
 
   // Funzione per aggiungere un nuovo utente (endpoint riservato all'admin)
   function addUser(newUser) {
@@ -209,7 +220,6 @@ const checkLogin = ()=>{
       email: document.getElementById('register-email').value,
       surname: document.getElementById('register-lastname').value
     };
-    console.log(newUser)
     addUser(newUser);
   });
 
@@ -243,11 +253,24 @@ const checkLogin = ()=>{
         // Nasconde il pulsante Logout e mostra il form di login
         document.getElementById("logoutButton").style.display = "none";
         document.getElementById("loginForm").style.display = "block";
+        document.getElementById("logged-icons").setAttribute('style', 'display: none !important');
+        document.getElementById("non-logged-icons").setAttribute('style', 'display: flex !important');
     })
     .catch(error => {
         console.error('Errore durante il logout:', error);
         printOutput({ error: error.message });
     });
   }
+
+  const toggleCart = ()=>{
+    const toggler = document.querySelector(".offcanvas");
+    toggler.classList.toggle("show")
+    toggler.getAttribute("aria-modal") ? toggler.setAttribute("aria-modal", "true"): toggler.removeAttribute("aria-modal")
+    toggler.getAttribute("role") ? toggler.setAttribute("role", "dialog"): toggler.removeAttribute("role")
+  }
+  document.querySelector(".fa-shopping-cart").addEventListener("click", toggleCart)
+  document.querySelector(".btn-close").addEventListener("click", toggleCart)
+
+
 
   window.addEventListener("DOMContentLoaded", checkLogin)
