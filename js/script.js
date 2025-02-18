@@ -74,5 +74,14 @@ fetch('https://fakestoreapi.com/products')
                 }else return;
     }
 
+    const toggleShow = ()=>{
+        const toggler = document.querySelector(".dropdown-toggle");
+        toggler.getAttribute("aria-expanded") == "true"? toggler.setAttribute("aria-expanded", "false"): toggler.setAttribute("aria-expanded", "true")
+        const dropdownMenu = document.querySelector(".dropdown-menu");
+        dropdownMenu.classList.toggle("show")
+        dropdownMenu.getAttribute("data-bs-popper") ? dropdownMenu.setAttribute("data-bs-popper", "none"): dropdownMenu.removeAttribute("data-bs-popper")
+      }
+      document.querySelector(".dropdown").addEventListener("click", toggleShow)
+
 
 

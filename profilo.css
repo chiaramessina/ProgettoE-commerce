@@ -46,3 +46,11 @@
 #logoutButton{
     margin-left: 42.5%;
 }
+
+#logged-icons{
+    display: none !important;
+}
+
+/* .d-flex {
+    display: flex !important;
+} */
