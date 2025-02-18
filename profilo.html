@@ -20,8 +20,19 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- FontAwesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+
 </head>
 <body >
+  <header>
+    <nav id="nav" class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <img class="logo" src="Images/Logo.png" alt="Logo" width="50">
+            <button id="barra" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
   <header>
     <nav id="nav" class="navbar navbar-expand-lg">
         <div class="container-fluid">
@@ -31,12 +42,18 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="Homepage.html">Home</a>
                     </li>
                     <li class="nav-item">
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="Prodotti.html">Prodotti</a>
+                    </li>
+                    <li class="nav-item">
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="contatti.html">Contatti</a>
@@ -91,14 +108,14 @@
     <div class="login-register">
       <p>Don't have an accunt?<a 
         href="#"
-        class="register-link">Register now</a></p>
+        class="register-link"  data-bs-toggle="modal" data-bs-target="#registerModal">Register now</a></p>
     </div>
   </section>
     </div>
   </div>
 </div>
 
-<!--Modal Register 
+
 <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content" style="background-color: #F5ECD5">
@@ -108,16 +125,25 @@
           <label for="register-username">Username:</label><br>
           <input class="input-box" type="text" id="register-username" required>
           <br><br>
+          <label for="register-firstname">First Name:</label><br>
+          <input class="input-box" type="text" id="register-firstname" required>
+          <br><br>
+          <label for="register-lastname">Last Name:</label><br>
+          <input class="input-box" type="text" id="register-lastname" required>
+          <br><br>
+          <label for="register-email">Email:</label><br>
+          <input class="input-box" type="mail" id="register-email" required>
+          <br><br>
           <label for="register-password">Password:</label><br>
           <input class="input-box" type="password" id="register-password" required>
           <br><br>
           <button class="button-b" type="submit">Register</button>
         </form>
-        <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+        <p>Already have an account? <a href="#" class="login-link"  data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a></p>
       </section>
     </div>
   </div>
-</div>-->
+</div>
 
     <!--PROFILO-->
     <div class="container rounded mt-5 mb-5" style="background-color: #F5ECD5">
@@ -134,6 +160,7 @@
             <!-- Colonna per il form -->
             <div class="col-md-5 border-right">
                 <div class="p-3 py-5">
+                  <form id="addUserForm">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h4 class="text-right">Profile Settings</h4>
                     </div>
@@ -149,8 +176,8 @@
                     </div>
                     <div class="row mt-3">
                         <div class="col-md-12">
-                            <label class="labels">Mobile Number</label>
-                            <input type="text" class="form-control" placeholder="enter phone number" value="">
+                            <label class="labels">Username</label>
+                            <input type="text" class="form-control" placeholder="enter username" value="">
                         </div>
                         <div class="col-md-12">
                             <label class="labels">Address Line 1</label>
@@ -178,10 +205,12 @@
                     <div class="mt-5 text-center">
                         <button class="btn btn-secondary profile-button" type="button">Save Profile</button>
                     </div>
+                  </form>
                 </div>
             </div>
         </div>
     </div>
+
 
   <!-- Footer -->
   <footer
@@ -298,9 +327,10 @@
   </footer>
 
 
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="profilo.js"></script>
+<script src="/js/profile.js"></script>
 <!-- Bootstrap dropdown-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

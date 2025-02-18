@@ -6,7 +6,7 @@ const getCartItem = ()=>{
     let cartItems = "";
 
     for (let key in localStorage) {
-        if(key.charAt(0)=="q") console.log("hi");
+        if(key.charAt(0)=="q" ||key=="authToken") console.log(key);
           else{
         const item = JSON.parse(localStorage.getItem(key))
         if(item===null) return
@@ -102,7 +102,7 @@ const getTotalPrice = ()=>{
       const subtotal = document.querySelector(".subtotal-cart").textContent = parseFloat(total).toFixed(2)
       const totalCart = document.querySelector(".total-cart").textContent = parseFloat(subtotal+2.99).toFixed(2);
 
-      document.querySelector(".checkout-btn").textContent = parseFloat(totalCart).toFixed(2);
+      document.querySelector(".checkout-btn").textContent = parseFloat(totalCart).toFixed(2) ;
 }
 
 

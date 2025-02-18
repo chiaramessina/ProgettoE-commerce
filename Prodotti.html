@@ -11,9 +11,67 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="prodotti-style.css">
     <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="profilo.css">
     <title>Prodotti</title>
 </head>
 <body>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="background-color: #F5ECD5">
+         <!-- Sezione per il Login -->
+    <section id="loginSection">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label for="username">Username:</label><br>
+        <input class="input-box" type="text" id="username" name="username" required>
+        <br><br>
+        <label for="password">Password:</label><br>
+        <input class="input-box" type="password" id="password" name="password" required>
+        <br><br>
+        <button class="button-b" type="submit">Login</button>
+      </form>
+       <!-- Pulsante Logout -->
+      <button id="logoutButton" style="display:none;">Logout</button>
+      <div class="login-register">
+        <p>Don't have an accunt?<a 
+          href="#"
+          class="register-link"  data-bs-toggle="modal" data-bs-target="#registerModal">Register now</a></p>
+      </div>
+    </section>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal registrazione -->
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="background-color: #F5ECD5">
+        <section id="registerSection">
+          <h2>Register</h2>
+          <form id="registerForm">
+            <label for="register-username">Username:</label><br>
+            <input class="input-box" type="text" id="register-username" required>
+            <br><br>
+            <label for="register-firstname">First Name:</label><br>
+            <input class="input-box" type="text" id="register-firstname" required>
+            <br><br>
+            <label for="register-lastname">Last Name:</label><br>
+            <input class="input-box" type="text" id="register-lastname" required>
+            <br><br>
+            <label for="register-email">Email:</label><br>
+            <input class="input-box" type="mail" id="register-email" required>
+            <br><br>
+            <label for="register-password">Password:</label><br>
+            <input class="input-box" type="password" id="register-password" required>
+            <br><br>
+            <button class="button-b" type="submit">Register</button>
+          </form>
+          <p>Already have an account? <a href="#" class="login-link"  data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a></p>
+        </section>
+      </div>
+    </div>
+  </div>
     <header>
         <nav id="nav" class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
@@ -43,7 +101,7 @@
           <div class="icons">
             <i class="fas fa-heart"></i> <!-- Icona preferiti -->
             <i class="fas fa-shopping-cart" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"></i>
-             <i class="fas fa-user-alt"></i>
+             <i class="fas fa-user-alt" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
           </div>
         </div>
        
@@ -56,25 +114,25 @@
       </div>
       <div class="filtri">
         <div class="sceltaCategoria">
-          <select class="form-select form-select-sm" aria-label="Small select example">
-            <option selected>Categorie</option>
-            <option value="1">Abbigliamento Uomo</option>
-            <option value="2">Abbigliamento Donna</option>
-            <option value="3">Elettronica</option>
-            <option value="4">Gioielleria</option>
+          <select class="form-select form-select-sm category-filter" aria-label="Small select example">
+            <option value="empty" selected>Categorie</option>
+            <option value="men's clothing">Abbigliamento Uomo</option>
+            <option value="women's clothing">Abbigliamento Donna</option>
+            <option value="electronics">Elettronica</option>
+            <option value="jewelery">Gioielleria</option>
           </select>
         </div>
 
         <div class="Prezzo">
-          <select class="form-select form-select-sm" aria-label="Small select example">
-            <option selected>Prezzo</option>
-            <option value="1">0$ to 50$</option>
-            <option value="2">50$ to 100$</option>
-            <option value="3">150$ to 250$</option>
-            <option value="4">250$ to 300$</option>
+          <select class="form-select form-select-sm price-filter" aria-label="Small select example">
+            <option value="0" selected>Prezzo</option>
+            <option value="1">$0 to $50</option>
+            <option value="2">$50 to $100</option>
+            <option value="3">$150 to $250</option>
+            <option value="4">$250 to Infinity</option>
           </select>          
         </div>
-        <button type="button" class="btn btn-primary"style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+        <button type="button" class="btn btn-primary"style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="getFiltered()">
     Filtra</button>     
   </div>
   
@@ -344,5 +402,6 @@
     crossorigin="anonymous"></script>
     <script src="js/cart.js"></script>
     <script src="js/prodotti.js"></script>
+    <script src="js/profile.js"></script>
 </body>
 </html>

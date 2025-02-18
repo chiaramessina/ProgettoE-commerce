@@ -10,9 +10,67 @@
     <link rel="stylesheet" href="contatti.css">
     <script src="https://kit.fontawesome.com/0cae5511b9.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="profilo.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 <body>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="background-color: #F5ECD5">
+         <!-- Sezione per il Login -->
+    <section id="loginSection">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label for="username">Username:</label><br>
+        <input class="input-box" type="text" id="username" name="username" required>
+        <br><br>
+        <label for="password">Password:</label><br>
+        <input class="input-box" type="password" id="password" name="password" required>
+        <br><br>
+        <button class="button-b" type="submit">Login</button>
+      </form>
+       <!-- Pulsante Logout -->
+      <button id="logoutButton" style="display:none;">Logout</button>
+      <div class="login-register">
+        <p>Don't have an accunt?<a 
+          href="#"
+          class="register-link"  data-bs-toggle="modal" data-bs-target="#registerModal">Register now</a></p>
+      </div>
+    </section>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal registrazione -->
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="background-color: #F5ECD5">
+        <section id="registerSection">
+          <h2>Register</h2>
+          <form id="registerForm">
+            <label for="register-username">Username:</label><br>
+            <input class="input-box" type="text" id="register-username" required>
+            <br><br>
+            <label for="register-firstname">First Name:</label><br>
+            <input class="input-box" type="text" id="register-firstname" required>
+            <br><br>
+            <label for="register-lastname">Last Name:</label><br>
+            <input class="input-box" type="text" id="register-lastname" required>
+            <br><br>
+            <label for="register-email">Email:</label><br>
+            <input class="input-box" type="mail" id="register-email" required>
+            <br><br>
+            <label for="register-password">Password:</label><br>
+            <input class="input-box" type="password" id="register-password" required>
+            <br><br>
+            <button class="button-b" type="submit">Register</button>
+          </form>
+          <p>Already have an account? <a href="#" class="login-link"  data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a></p>
+        </section>
+      </div>
+    </div>
+  </div>
 
 <header>
     <nav id="nav" class="navbar navbar-expand-lg bg-body-tertiary">
@@ -43,7 +101,7 @@
           <div class="icons">
             <i class="fas fa-heart"></i> <!-- Icona preferiti -->
             <i class="fas fa-shopping-cart" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"></i>
-             <i class="fas fa-user-alt"></i><!-- Icona utente -->
+             <i class="fas fa-user-alt" data-bs-toggle="modal" data-bs-target="#exampleModal"></i><!-- Icona utente -->
           </div>
         </div>
       </nav>
@@ -370,6 +428,7 @@
   </footer>
 
   <script src="js/cart.js"></script>
+  <script src="js/profile.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
