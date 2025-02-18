@@ -470,3 +470,9 @@ button {
   background-color: #578E7E;
   border-color: #306455;
 }
+
+
+
+.offcanvas.offcanvas-end{
+  width: 1000px !important;
+}

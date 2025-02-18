@@ -7,13 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-<<<<<<< HEAD:hompage.html
-        <script src="https://kit.fontawesome.com/0cae5511b9.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-=======
     <script src="https://kit.fontawesome.com/0cae5511b9.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
->>>>>>> b5537235287fb4b7376e745c9b8a1db5f7d2ddd6:Homepage.html
 </head>
 <body>
     <header>
@@ -31,17 +26,10 @@
                         <a class="nav-link active" aria-current="page" href="Homepage.html">Home</a>
                       </li>
                       <li class="nav-item">
-<<<<<<< HEAD:hompage.html
-                        <a class="nav-link active" aria-current="page" href="Prodotti.html">Prodotti</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="contatti.html">Contatti</a>
-=======
                         <a class="nav-link active" aria-current="page" href="Prodotti.html">Shop</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="contatti.html">Contact Us</a>
->>>>>>> b5537235287fb4b7376e745c9b8a1db5f7d2ddd6:Homepage.html
                       </li>
                     </ul>
                     <form class="d-flex1" role="search">
@@ -49,52 +37,99 @@
                       <button id="tasto" class="btn btn-outline-success" type="submit">🔍︎</button>
                     </form>
               </div>
-<<<<<<< HEAD:hompage.html
-              <div>
-                <button  class="btn btn-primary" onClick="showPreferiti()">
-                    <i class="fas fa-heart"></i> <!-- Icona preferiti -->
-                </button>
-
-
-                <div id="preferitiDiv" style="display: none;">
-                    <i class="fa-solid fa-list-check"></i>
-                    <h5>Preferiti</h5>
-                    <button type="button" class="btn-close" aria-label="Close" onClick="closePreferiti()"></button>
-                
-                    <p>"mi piace"</p>
-                    <i class="fa-solid fa-thumbtack"> </i>
-                    <hr>
-                    <hr>
-                    <hr>
-                    <hr>
-                    <hr>
-            
-                </div>
-             
-                <button  class="btn btn-primary" onClick="showCarrello()">
-                    <i  class="fas fa-shopping-cart"> </i>  <!--icona carrello-->
-                </button>
-        
-        
-                <div id="carrelloDiv" style="display: none;">
-                    <i class="fa-solid fa-list-check"></i>
-                    <h5>Carrello</h5>
-                    <button type="button" class="btn-close" aria-label="Close" onClick="closeCarrello()"></button>
-                
-                    <p>i miei ordini</p>
-                    <i class="fa-solid fa-thumbtack"> </i>
-                    <hr>
-                    <hr>
-                    <hr>
-                    <hr>
-                    <hr>
-=======
               <div class="icons">
-                <i class="fas fa-heart"></i> <!-- Icona preferiti -->
+                
                 <i class="fas fa-shopping-cart"></i><!-- Icona carrello -->
                  <i class="fas fa-user-alt"></i><!-- Icona utente -->
               </div>
->>>>>>> b5537235287fb4b7376e745c9b8a1db5f7d2ddd6:Homepage.html
+            
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+              <i class="fas fa-heart"></i>
+            </button>
+            
+            <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="staticBackdropLabel">Preferiti</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <section class="h-100 h-custom">
+                  <div class="container h-100 py-5">
+                    <div class="row d-flex justify-content-center align-items-center h-100">
+                      <div class="col">
+                        <div class="table-responsive">
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col" class="h5">Articolo</th>
+                                <th scope="col">Aggiungi al carrello</th>
+                                <th scope="col">Rimuovi</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <!-- Preferito 1 -->
+                              <tr>
+                                <th scope="row">
+                                  <div class="d-flex align-items-center">
+                                    <img src="https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg" class="img-fluid rounded-3" style="width: 120px;" alt="Book">
+                                    <div class="flex-column ms-4">
+                                      <p class="mb-2">Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5</p>
+                                     
+                                    </div>
+                                  </div>
+                                </th>
+                                <td class="align-middle">
+                                  <button class="btn btn-primary">Aggiungi al carrello</button>
+                                </td>
+                                <td class="align-middle">
+                                  <button class="btn btn-danger">Rimuovi dai preferiti</button>
+                                </td>
+                              </tr>
+                              <!-- Preferito 2 -->
+                              <tr>
+                                <th scope="row">
+                                  <div class="d-flex align-items-center">
+                                    <img src="https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg" class="img-fluid rounded-3" style="width: 120px;" alt="Book">
+                                    <div class="flex-column ms-4">
+                                      <p class="mb-2">Giacca in cotone da uomo</p>
+                                      
+                                    </div>
+                                  </div>
+                                </th>
+                                <td class="align-middle">
+                                  <button class="btn btn-primary">Aggiungi al carrello</button>
+                                </td>
+                                <td class="align-middle">
+                                  <button class="btn btn-danger">Rimuovi dai preferiti</button>
+                                </td>
+                              </tr>
+                              <th scope="row">
+                              <div class="d-flex align-items-center">
+                              <img src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg" class="img-fluid rounded-3" style="width: 120px;" alt="Book">
+                              <div class="flex-column ms-4">
+                                  <p class="mb-2"> T-shirt slim fit premium casual da uomo</p>
+                              </div>
+                              </div>
+                              </th>
+                              <td class="align-middle">
+                                  <button class="btn btn-primary">Aggiungi al carrello</button>
+                                </td>
+                                <td class="align-middle">
+                                  <button class="btn btn-danger">Rimuovi dai preferiti</button>
+                                </td>
+                             
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+            
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+            </div>  
             </div>
           </nav>
     </header>
@@ -209,43 +244,6 @@
 </div>
 </div>
 
-<<<<<<< HEAD:hompage.html
-<script src="/js/script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script src="carrello.js"></script>
-<script src="preferiti.js"></script>
-<div class="footer-container">
-    <footer class="d-flex justify-content-between align-items-start py-3 border-top w-100">
-        
-        <div class="col-md-4 d-flex flex-column">
-            <p><span class="span-weight">Regione Sociale:</span> Regione (esempio).</p>
-            <p><span class="span-weight">Indirizzo:</span> Via Esempio 123, Città, CAP</p>
-            <p><span class="span-weight">Partita IVA:</span> IT12345678901</p>
-        </div>
-
-        <div class="col-md-4 text-center">
-            <p><a href="#">Privacy Policy</a></p>
-            <p><a href="#">Newsletter</a></p>
-        </div>
-
-        <div class="col-md-4 text-end">
-            <div class="social-icons">
-                <a href="#" class="ms-3">
-                    <i class="bi bi-twitter"></i>
-                </a>
-                <a href="#" class="ms-3">
-                    <i class="bi bi-instagram"></i>
-                </a>
-                <a href="#" class="ms-3">
-                    <i class="bi bi-facebook"></i>
-                </a>
-            </div>
-            <p class="mt-2">© 2025 Company, Inc</p>
-        </div>
-    </footer>
-=======
 <!-- Footer -->
   <footer
           class="text-center text-lg-start text-muted"
@@ -363,7 +361,6 @@
     <!-- Copyright -->
   </footer>
 
->>>>>>> b5537235287fb4b7376e745c9b8a1db5f7d2ddd6:Homepage.html
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
