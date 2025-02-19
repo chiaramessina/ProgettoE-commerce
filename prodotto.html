@@ -11,9 +11,67 @@
     <link rel="stylesheet" href="prodotto.css">
     <script src="https://kit.fontawesome.com/0cae5511b9.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="profilo.css">
 </head>
 <body>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="background-color: #F5ECD5">
+         <!-- Sezione per il Login -->
+    <section id="loginSection">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label for="username">Username:</label><br>
+        <input class="input-box" type="text" id="username" name="username" required>
+        <br><br>
+        <label for="password">Password:</label><br>
+        <input class="input-box" type="password" id="password" name="password" required>
+        <br><br>
+        <button class="button-b" type="submit">Login</button>
+      </form>
+       <!-- Pulsante Logout -->
+      <button id="logoutButton" style="display:none;">Logout</button>
+      <div class="login-register">
+        <p>Don't have an accunt?<a 
+          href="#"
+          class="register-link"  data-bs-toggle="modal" data-bs-target="#registerModal">Register now</a></p>
+      </div>
+    </section>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal registrazione -->
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="background-color: #F5ECD5">
+        <section id="registerSection">
+          <h2>Register</h2>
+          <form id="registerForm">
+            <label for="register-username">Username:</label><br>
+            <input class="input-box" type="text" id="register-username" required>
+            <br><br>
+            <label for="register-firstname">First Name:</label><br>
+            <input class="input-box" type="text" id="register-firstname" required>
+            <br><br>
+            <label for="register-lastname">Last Name:</label><br>
+            <input class="input-box" type="text" id="register-lastname" required>
+            <br><br>
+            <label for="register-email">Email:</label><br>
+            <input class="input-box" type="mail" id="register-email" required>
+            <br><br>
+            <label for="register-password">Password:</label><br>
+            <input class="input-box" type="password" id="register-password" required>
+            <br><br>
+            <button class="button-b" type="submit">Register</button>
+          </form>
+          <p>Already have an account? <a href="#" class="login-link"  data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a></p>
+        </section>
+      </div>
+    </div>
+  </div>
     <header>
         <nav id="nav" class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
@@ -39,10 +97,25 @@
                   <button id="tasto" class="btn btn-outline-success" type="submit">🔍︎</button>
                 </form>
           </div>
-          <div class="icons">
+
+          <div class="icons d-flex align-items-center" id="logged-icons" >  
+            <div class="dropdown">
+             <i class="fas fa-user-alt dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"></i>
+             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                 <li><a class="dropdown-item" href="profilo.html">Profilo</a></li>
+                 <li><a class="dropdown-item" href="#">Impostazioni</a></li>
+                 <li><a class="dropdown-item" href="#">Messaggi...</a></li>
+                 <li><a class="dropdown-item" href="#" id="logoutBtn">Log out</a></li>
+             </ul>
+         </div>
+             <i class="fas fa-heart"></i>
+             <i class="fas fa-shopping-cart" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"></i>
+         </div>
+
+          <div class="icons" id="non-logged-icons">
+            <i class="fas fa-user-alt" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
             <i class="fas fa-heart" ></i> <!-- Icona preferiti -->
-            <i class="fas fa-shopping-cart"></i><!-- Icona carrello -->
-            <i class="fas fa-user-alt"></i>
+            <i class="fas fa-shopping-cart" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"></i>
           </div>
         </div>
        
@@ -55,7 +128,144 @@
 
 
 
-
+      <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="staticBackdropLabel">Offcanvas</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div>
+            <section class="h-100 h-custom">
+                <div class="container h-100 py-5">
+                  <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col">
+              
+                      <div class="table-responsive">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col" class="h5">Shopping Bag</th>
+                              <th scope="col">Format</th>
+                              <th scope="col">Quantity</th>
+                              <th scope="col">Price</th>
+                            </tr>
+                          </thead>
+                          <tbody id="cart-elements">
+                            
+                          </tbody>
+                        </table>
+                      </div>
+              
+                      <div class="shadow-2-strong mb-5 mb-lg-0" style="border-radius: 16px;">
+                        <div class="card-body p-4">
+              
+                          <div class="row">
+                            <div class="col-md-6 col-lg-4 col-xl-3 mb-4 mb-md-0">
+                              <form>
+                                <div class="d-flex flex-row pb-3">
+                                  <div class="d-flex align-items-center pe-2">
+                                    <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1v"
+                                      value="" aria-label="..." checked />
+                                  </div>
+                                  <div class="rounded border w-100 p-3">
+                                    <p class="d-flex align-items-center mb-0">
+                                      <i class="fab fa-cc-mastercard fa-2x text-body pe-2"></i>Credit
+                                      Card
+                                    </p>
+                                  </div>
+                                </div>
+                                <div class="d-flex flex-row pb-3">
+                                  <div class="d-flex align-items-center pe-2">
+                                    <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel2v"
+                                      value="" aria-label="..." />
+                                  </div>
+                                  <div class="rounded border w-100 p-3">
+                                    <p class="d-flex align-items-center mb-0">
+                                      <i class="fab fa-cc-visa fa-2x fa-lg text-body pe-2"></i>Debit Card
+                                    </p>
+                                  </div>
+                                </div>
+                                <div class="d-flex flex-row">
+                                  <div class="d-flex align-items-center pe-2">
+                                    <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel3v"
+                                      value="" aria-label="..." />
+                                  </div>
+                                  <div class="rounded border w-100 p-3">
+                                    <p class="d-flex align-items-center mb-0">
+                                      <i class="fab fa-cc-paypal fa-2x fa-lg text-body pe-2"></i>PayPal
+                                    </p>
+                                  </div>
+                                </div>
+                              </form>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-xl-6">
+                              <div class="row">
+                                <div class="col-12 col-xl-6">
+                                  <div data-mdb-input-init class="form-outline mb-4 mb-xl-5">
+                                    <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
+                                      placeholder="John Smith" />
+                                    <label class="form-label" for="typeName">Name on card</label>
+                                  </div>
+              
+                                  <div data-mdb-input-init class="form-outline mb-4 mb-xl-5">
+                                    <input type="text" id="typeExp" class="form-control form-control-lg" placeholder="MM/YY"
+                                      size="7" id="exp" minlength="7" maxlength="7" />
+                                    <label class="form-label" for="typeExp">Expiration</label>
+                                  </div>
+                                </div>
+                                <div class="col-12 col-xl-6">
+                                  <div data-mdb-input-init class="form-outline mb-4 mb-xl-5">
+                                    <input type="text" id="typeText" class="form-control form-control-lg" siez="17"
+                                      placeholder="1111 2222 3333 4444" minlength="19" maxlength="19" />
+                                    <label class="form-label" for="typeText">Card Number</label>
+                                  </div>
+              
+                                  <div data-mdb-input-init class="form-outline mb-4 mb-xl-5">
+                                    <input type="password" id="typeText" class="form-control form-control-lg"
+                                      placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3" />
+                                    <label class="form-label" for="typeText">Cvv</label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-4 col-xl-3">
+                              <div class="d-flex justify-content-between" style="font-weight: 500;">
+                                <p class="mb-2">Subtotal&nbsp;$</p>
+                                <p class="mb-2 subtotal-cart">$</p>
+                              </div>
+              
+                              <div class="d-flex justify-content-between" style="font-weight: 500;">
+                                <p class="mb-0">Shipping&nbsp;</p>
+                                <p class="mb-0 shipping">$2.99</p>
+                              </div>
+              
+                              <hr class="my-4">
+              
+                              <div class="d-flex justify-content-between mb-4" style="font-weight: 500;">
+                                <p class="mb-2">Total (tax included)&nbsp;$</p>
+                                <p class="mb-2 total-cart"></p>
+                              </div>
+              
+                              <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block btn-lg">
+                                <div class="d-flex justify-content-between">
+                                  <span>Checkout&nbsp;$</span>
+                                  <span class="checkout-btn">$</span>
+                                </div>
+                              </button>
+              
+                            </div>
+                          </div>
+              
+                        </div>
+                      </div>
+              
+                    </div>
+                  </div>
+                </div>
+              </section>
+          </div>
+        </div>
+      </div>
 
 
       <div id="prodotto-container" class="row">
@@ -68,20 +278,20 @@
             <div id="detail-container">
 
 
-                <div class="item-name">Nome prodotto</div>
+                <div class="item-name">Product Name</div>
                 <div class="item-description"></div>
                 <div class="selection-container">
-                <div class="label">Colore primario*</div>
+                <div class="label">Color*</div>
                 <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                    <option selected>Seleziona un colore</option>
+                    <option selected>Select a color</option>
 
-                    <option value="Verde">Verde</option>
-                    <option value="Blu">Blu</option>
-                    <option value="Fucsia">Fucsia</option>
+                    <option value="Verde">Green</option>
+                    <option value="Blu">Blue</option>
+                    <option value="Fucsia">Fuchsia</option>
                   </select>
-                  <div class="label">Misura*</div>
+                  <div class="label">Size*</div>
                   <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                    <option selected>Seleziona una misura</option>
+                    <option selected>Select a size</option>
                     <option value="XS">XS</option>
                     <option value="S">S</option>
                     <option value="M">M</option>
@@ -94,48 +304,37 @@
                     <div class="additional-info-day add-info-cont">
                         <i class="fa-solid fa-calendar-days"></i>
                         <div class="info-day">
-                        Ordina oggi per riceverlo entro il giorno 10-26 feb
+                          Order today to receive it by February 10-26
                         </div>
                     </div>
                     <div class="additional-info-reso add-info-cont">
                         <i class="fa-solid fa-box-archive"></i>
                         <div class="info-reso">
-                            Si accettano resi entro 30 giorni
+                          Returns accepted within 30 days.
                         </div>
                     </div>
 
                     <div class="additional-info-sped add-info-cont">
                         <i class="fa-solid fa-truck"></i>
                         <div class="info-sped">
-                            Costo di spedizione: € 18,71
+                            Shipping cost: $18.71
                         </div>
                     </div>
 
                     <div class="additional-info-location add-info-cont">
                         <i class="fa-solid fa-location-pin"></i>
                         <div class="info-location">
-                            Viene spedito da: Regno Unito
+                          Shipped from: United Kingdom
                         </div>
                     </div>
                     
                   </div>
-                  <div class="price"><span class="item-price">100</span> $ <span class="iva">(IVA inclusa)</span></div>
-
-
-
-                  <!-- Ordina oggi per riceverlo entro il giorno 10-26 feb
-
-                    Si accettano resi
-
-                    entro 30 giorni
-                    Costo di spedizione: € 18,71
-                    Viene spedito da: Regno Unito -->
-
+                  <div class="price"><span class="item-price">100</span> $ <span class="iva">(VAT included)</span></div>
 
                   <div class="buttons">
                     
                     <button type="button" class="btn btn-primary"><i class="fas fa-heart"></i> </button>
-                    <button type="button" class="btn btn-primary add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Aggiungi al carrello </button>
+                    <button type="button" class="btn btn-primary add-to-cart-btn cart-icon"><i class="fas fa-shopping-cart cart-icon"></i> Add to Cart</button>
                   </div>
 
             </div>
@@ -143,7 +342,7 @@
             </div>
 
             <div id="general-review-container">
-                <div class="review-header">Ricensioni del prodotto <div data-coreui-read-only="true" data-coreui-toggle="rating" data-coreui-value="3"></div></div>
+                <div class="review-header">Product Reviews <div data-coreui-read-only="true" data-coreui-toggle="rating" data-coreui-value="3"></div></div>
                 
                 <div class="review-row">
                     <div class="review-container">
@@ -156,7 +355,7 @@
                                 <i class="fa fa-star rating-color"></i>
                             </div>
                         </div>
-                        <div class="review-message">Sono molto soddisfatto dell'acquisto. Il prodotto è di buona qualità, facile da usare e funziona perfettamente. Il rapporto qualità/prezzo è ottimo, e la costruzione sembra solida. L'unica piccola pecca è la dimensione, ma non influisce sulle prestazioni. Consigliato!</div>
+                        <div class="review-message">I'm very pleased with this product. It’s made with high-quality materials, simple to use, and performs flawlessly. The price is very reasonable for what you get, and the design feels solid. The only minor drawback is size, but it doesn’t affect its functionality. Highly recommend!👍</div>
                         <div class="review-author-container">
                             <i class="fa-regular fa-user"></i>
                             <div class="review-author">John Doe</div>
@@ -175,10 +374,10 @@
                                 <i class="fa fa-star rating-color"></i>
                             </div>
                         </div>
-                        <div class="review-message">Sono molto soddisfatto dell'acquisto. Il prodotto è di buona qualità, facile da usare e funziona perfettamente. Il rapporto qualità/prezzo è ottimo, e la costruzione sembra solida. L'unica piccola pecca è la dimensione, ma non influisce sulle prestazioni. Consigliato!</div>
+                        <div class="review-message">Very satisfied with my purchase.😊 The quality of the product is excellent, it’s easy to use, and it works without any issues. For the price, it offers great value, and the build seems durable. The only small concern is its size😞, but it’s not a problem for its performance. I would definitely recommend it!!</div>
                         <div class="review-author-container">
                             <i class="fa-regular fa-user"></i>
-                            <div class="review-author">John Doe</div>
+                            <div class="review-author">Olivia Storm</div>
                             <div class="review-date"></div>
                         </div>
                     </div>
@@ -195,10 +394,10 @@
                                 <i class="fa fa-star rating-color"></i>
                             </div>
                         </div>
-                        <div class="review-message">Sono molto soddisfatto dell'acquisto. Il prodotto è di buona qualità, facile da usare e funziona perfettamente. Il rapporto qualità/prezzo è ottimo, e la costruzione sembra solida. L'unica piccola pecca è la dimensione, ma non influisce sulle prestazioni. Consigliato!</div>
+                        <div class="review-message">I’m really happy with this product. The build quality is excellent, and it does exactly what it promises.🤩 The price-to-performance ratio is impressive, and the product feels very sturdy. The only small flaw is size, but it doesn’t affect its function. Highly recommended!</div>
                         <div class="review-author-container">
                             <i class="fa-regular fa-user"></i>
-                            <div class="review-author">John Doe</div>
+                            <div class="review-author">Leo Hawke</div>
                             <div class="review-date"></div>
                         </div>
                     </div>
@@ -214,10 +413,10 @@
                                 <i class="fa fa-star rating-color"></i>
                             </div>
                         </div>
-                        <div class="review-message">Sono molto soddisfatto dell'acquisto. Il prodotto è di buona qualità, facile da usare e funziona perfettamente. Il rapporto qualità/prezzo è ottimo, e la costruzione sembra solida. L'unica piccola pecca è la dimensione, ma non influisce sulle prestazioni. Consigliato!</div>
+                        <div class="review-message">Extremely satisfied with this item. The quality is fantastic, and it’s very easy to use. It works perfectly, and the price is fair for the value it provides. The construction seems solid, although the size could be a little bigger. However, this doesn’t affect how well it works. Highly recommended!😊</div>
                         <div class="review-author-container">
                             <i class="fa-regular fa-user"></i>
-                            <div class="review-author">John Doe</div>
+                            <div class="review-author">Ava Winters</div>
                             <div class="review-date"></div>
                         </div>
                     </div>
@@ -228,7 +427,7 @@
 
                     <div class="container">
                         <div class="rating-container text-center">
-                            <h3 class="rating-title">Lascia una ricensione</h3>
+                            <h3 class="rating-title">Write a review</h3>
                             <div class="star-rating">
                                 <input type="radio" id="star5" name="rating" value="5">
                                 <label for="star5" class="fas fa-star"></label>
@@ -242,7 +441,7 @@
                                 <label for="star1" class="fas fa-star"></label>
                             </div>
                             <div class="rating-feedback">
-                                <textarea class="form-control" rows="3" placeholder="Sei stato soddisfatto con questo prodotto?"></textarea>
+                                <textarea class="form-control" rows="3" placeholder="Tell us, did this product impress you?"></textarea>
                             </div>
                             <button class="submit-rating">Submit Rating</button>
                         </div>
@@ -252,7 +451,7 @@
             </div>
 
             <div class="similar-container">
-                <h2>Prodotti simili</h2>
+                <h2>Recommended for You</h2>
     <!--card promozioni-->
     <div class="container promo-container">
     </div>
@@ -260,34 +459,122 @@
       </div>
 
      <div class="footer-container">
-        <footer class="d-flex justify-content-between align-items-start py-3 border-top w-100">
-            
-            <div class="col-md-4 d-flex flex-column">
-                <p><span class="span-weight">Regione Sociale:</span> Regione (esempio).</p>
-                <p><span class="span-weight">Indirizzo:</span> Via Esempio 123, Città, CAP</p>
-                <p><span class="span-weight">Partita IVA:</span> IT12345678901</p>
-            </div>
-    
-            <div class="col-md-4 text-center">
-                <p><a href="#">Privacy Policy</a></p>
-                <p><a href="#">Newsletter</a></p>
-            </div>
-    
-            <div class="col-md-4 text-end">
-                <div class="social-icons">
-                    <a href="#" class="ms-3">
-                        <i class="bi bi-twitter"></i>
-                    </a>
-                    <a href="#" class="ms-3">
-                        <i class="bi bi-instagram"></i>
-                    </a>
-                    <a href="#" class="ms-3">
-                        <i class="bi bi-facebook"></i>
-                    </a>
-                </div>
-                <p class="mt-2">© 2025 Company, Inc</p>
-            </div>
-        </footer>
+        <!-- Footer -->
+  <footer
+  class="text-center text-lg-start text-muted"
+  style="background-color: #F5ECD5"
+  >
+<!-- Section: Social media -->
+<section
+     class="d-flex justify-content-between p-4"
+     style="background-color: #578E7E"
+     >
+<!-- Left -->
+<div class="me-5">
+<span>Get connected with us on social networks:</span>
+</div>
+
+<div>
+<a href="" class="text-dark me-4">
+  <i class="fab fa-facebook-f"></i>
+</a>
+<a href="" class="text-dark me-4">
+  <i class="fab fa-twitter"></i>
+</a>
+<a href="" class="text-dark me-4">
+  <i class="fab fa-google"></i>
+</a>
+<a href="" class="text-dark me-4">
+  <i class="fab fa-instagram"></i>
+</a>
+<a href="" class="text-dark me-4">
+  <i class="fab fa-linkedin"></i>
+</a>
+<a href="" class="text-dark me-4">
+  <i class="fab fa-github"></i>
+</a>
+</div>
+</section>
+
+<section class="">
+<div class="container text-center text-md-start mt-5">
+<!-- Grid row -->
+<div class="row mt-3">
+  <!-- Grid column -->
+  <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+    <!-- Content -->
+    <h6 class="text-uppercase fw-bold">Company name</h6>
+    <p>
+      Here you can use rows and columns to organize your footer
+      content. Lorem ipsum dolor sit amet, consectetur adipisicing
+      elit.
+    </p>
+  </div>
+  <!-- Grid column -->
+
+  <!-- Grid column -->
+  <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+    <!-- Links -->
+    <h6 class="text-uppercase fw-bold">Products</h6>
+    <p>
+      <a href="#!" class="text-dark">MDBootstrap</a>
+    </p>
+    <p>
+      <a href="#!" class="text-dark">MDWordPress</a>
+    </p>
+    <p>
+      <a href="#!" class="text-dark">BrandFlow</a>
+    </p>
+    <p>
+      <a href="#!" class="text-dark">Bootstrap Angular</a>
+    </p>
+  </div>
+  <!-- Grid column -->
+
+  <!-- Grid column -->
+  <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+    <!-- Links -->
+    <h6 class="text-uppercase fw-bold">Useful links</h6>
+    <p>
+      <a href="#!" class="text-dark">Your Account</a>
+    </p>
+    <p>
+      <a href="#!" class="text-dark">Become an Affiliate</a>
+    </p>
+    <p>
+      <a href="#!" class="text-dark">Shipping Rates</a>
+    </p>
+    <p>
+      <a href="#!" class="text-dark">Help</a>
+    </p>
+  </div>
+  <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+    <!-- Links -->
+    <h6 class="text-uppercase fw-bold">Contact</h6>
+    <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+    <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
+    <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+    <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+  </div>
+  <!-- Grid column -->
+</div>
+<!-- Grid row -->
+</div>
+</section>
+<!-- Section: Links  -->
+
+<!-- Copyright -->
+<div
+ class="text-center p-3"
+ style="background-color: rgba(0, 0, 0, 0.2)"
+ >
+© 2020 Copyright:
+<a class="text-dark" href="https://mdbootstrap.com/"
+ >MDBootstrap.com</a
+>
+</div>
+<!-- Copyright -->
+</footer>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -297,6 +584,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="js/prodotto.js"></script>
- 
+ <script src="js/cart.js"></script>
+ <script src="js/profile.js"></script>
 </body>
 </html>
