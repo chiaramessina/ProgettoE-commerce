@@ -13,529 +13,520 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 <body>
-    <header>
-        <nav id="nav" class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-        
-              <img class="logo" src="Images/Logo.png" alt="Logo" width="50">
-              <button id="barra" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="Homepage.html">Home</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="Prodotti.html">Shop</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="contatti.html">Contact Us</a>
-                      </li>
-                    </ul>
-                    <form class="d-flex1" role="search">
-                      <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                      <button id="tasto" class="btn btn-outline-success" type="submit">🔍︎</button>
-                    </form>
-              </div>
+  <header>
+    <nav id="nav" class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+          <img class="logo" src="Images/Logo.png" alt="Logo" width="50">
+          
+          <button id="barra" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
 
-              <div class="icons d-flex align-items-center" id="logged-icons" >  
-                <div class="dropdown">
-                  <i class="fas fa-user-alt dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"></i>
-                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                     <li><a class="dropdown-item" href="profilo.html">Profilo</a></li>
-                     <li><a class="dropdown-item" href="ordini.css">Orders</a></li>
-                     <li><a class="dropdown-item" href="messaggi.hmtl">Messages...</a></li>
-                     <li><a class="dropdown-item" href="#" id="logoutBtn">Log out</a></li>
-                 </ul>
-                </div> 
-                 <i class="fas fa-heart" type="button" data-bs-toggle="offcanvas" data-bs-target="#preferiti" aria-controls="staticBackdrop"></i>
-                 <i class="fas fa-shopping-cart" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"></i>
-             </div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <a class="nav-link active" href="Homepage.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link active" href="Prodotti.html">Shop</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link active" href="contatti.html">Contact Us</a>
+                  </li>
+              </ul>
 
-
-             
-            </div>
+              <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button id="tasto" class="btn btn-outline-success" type="submit">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
+              </form>
           </div>
-          </nav>
-    </header>
+
+          <!-- Icone per utenti loggati -->
+          <div class="icons d-flex align-items-center" id="logged-icons">
+              <div class="dropdown">
+                  <i class="fa-solid fa-user dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <li><a class="dropdown-item" href="profilo.html">Profilo</a></li>
+                      <li><a class="dropdown-item" href="ordini.html">Orders</a></li>
+                      <li><a class="dropdown-item" href="messaggi.html">Messages...</a></li>
+                      <li><a class="dropdown-item" href="#" id="logoutBtn">Log out</a></li>
+                  </ul>
+              </div> 
+              <i class="fa-solid fa-heart" type="button" data-bs-toggle="modal" data-bs-target="#preferitiModal"></i>
+              <i class="fa-solid fa-shopping-cart" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop"></i>
+          </div>
+
+          <!-- Icone per utenti non loggati -->
+          <div class="icons d-flex align-items-center" id="non-logged-icons">
+              <i class="fa-solid fa-user" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+              <i class="fa-solid fa-heart" type="button" data-bs-toggle="modal" data-bs-target="#preferitiModal"></i>
+              <i class="fa-solid fa-shopping-cart" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop"></i>
+          </div>
+      </div>
+  </nav>
+</header>
 
 
-    <!--modal log in-->
+<!--modal log in-->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content" style="background-color: #F5ECD5">
-       <!-- Sezione per il Login -->
-  <section id="loginSection">
-    <h2>Login</h2>
-    <form id="loginForm">
-      <label for="username">Username:</label><br>
-      <input class="input-box" type="text" id="username" name="username" required>
-      <br><br>
-      <label for="password">Password:</label><br>
-      <input class="input-box" type="password" id="password" name="password" required>
-      <br><br>
-      <button class="button-b" type="submit">Login</button>
-    </form>
-     <!-- Pulsante Logout -->
-    <button id="logoutButton" style="display:none;">Logout</button>
-    <div class="login-register">
-      <p>Don't have an accunt?<a 
-        href="#"
-        class="register-link"  data-bs-toggle="modal" data-bs-target="#registerModal">Register now</a></p>
-    </div>
-  </section>
-    </div>
-  </div>
+<div class="modal-dialog">
+<div class="modal-content" style="background-color: #F5ECD5">
+   <!-- Sezione per il Login -->
+<section id="loginSection">
+<h2>Login</h2>
+<form id="loginForm">
+  <label for="username">Username:</label><br>
+  <input class="input-box" type="text" id="username" name="username" required>
+  <br><br>
+  <label for="password">Password:</label><br>
+  <input class="input-box" type="password" id="password" name="password" required>
+  <br><br>
+  <button class="button-b" type="submit">Login</button>
+</form>
+ <!-- Pulsante Logout -->
+<button id="logoutButton" style="display:none;">Logout</button>
+<div class="login-register">
+  <p>Don't have an accunt?<a 
+    href="#"
+    class="register-link"  data-bs-toggle="modal" data-bs-target="#registerModal">Register now</a></p>
+</div>
+</section>
+</div>
+</div>
 </div>
 
 <!-- Modal registrazione -->
 <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content" style="background-color: #F5ECD5">
-      <section id="registerSection">
-        <h2>Register</h2>
-        <form id="registerForm">
-          <label for="register-username">Username:</label><br>
-          <input class="input-box" type="text" id="register-username" required>
-          <br><br>
-          <label for="register-firstname">First Name:</label><br>
-          <input class="input-box" type="text" id="register-firstname" required>
-          <br><br>
-          <label for="register-lastname">Last Name:</label><br>
-          <input class="input-box" type="text" id="register-lastname" required>
-          <br><br>
-          <label for="register-email">Email:</label><br>
-          <input class="input-box" type="mail" id="register-email" required>
-          <br><br>
-          <label for="register-password">Password:</label><br>
-          <input class="input-box" type="password" id="register-password" required>
-          <br><br>
-          <button class="button-b" type="submit">Register</button>
-        </form>
-        <p>Already have an account? <a href="#" class="login-link"  data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a></p>
-      </section>
+<div class="modal-dialog">
+<div class="modal-content" style="background-color: #F5ECD5">
+  <section id="registerSection">
+    <h2>Register</h2>
+    <form id="registerForm">
+      <label for="register-username">Username:</label><br>
+      <input class="input-box" type="text" id="register-username" required>
+      <br><br>
+      <label for="register-firstname">First Name:</label><br>
+      <input class="input-box" type="text" id="register-firstname" required>
+      <br><br>
+      <label for="register-lastname">Last Name:</label><br>
+      <input class="input-box" type="text" id="register-lastname" required>
+      <br><br>
+      <label for="register-email">Email:</label><br>
+      <input class="input-box" type="mail" id="register-email" required>
+      <br><br>
+      <label for="register-password">Password:</label><br>
+      <input class="input-box" type="password" id="register-password" required>
+      <br><br>
+      <button class="button-b" type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="#" class="login-link"  data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a></p>
+  </section>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="staticBackdropLabel">Offcanvas</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+      <section class="h-100 h-custom">
+          <div class="container h-100 py-5">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+              <div class="col">
+        
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col" class="h5">Shopping Bag</th>
+                        <th scope="col">Format</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Price</th>
+                      </tr>
+                    </thead>
+                    <tbody id="cart-elements">
+                      
+                    </tbody>
+                  </table>
+                </div>
+        
+                <div class="shadow-2-strong mb-5 mb-lg-0" style="border-radius: 16px;">
+                  <div class="card-body p-4">
+        
+                    <div class="row">
+                      <div class="col-md-6 col-lg-4 col-xl-3 mb-4 mb-md-0">
+                        <form>
+                          <div class="d-flex flex-row pb-3">
+                            <div class="d-flex align-items-center pe-2">
+                              <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1v"
+                                value="" aria-label="..." checked />
+                            </div>
+                            <div class="rounded border w-100 p-3">
+                              <p class="d-flex align-items-center mb-0">
+                                <i class="fab fa-cc-mastercard fa-2x text-body pe-2"></i>Credit
+                                Card
+                              </p>
+                            </div>
+                          </div>
+                          <div class="d-flex flex-row pb-3">
+                            <div class="d-flex align-items-center pe-2">
+                              <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel2v"
+                                value="" aria-label="..." />
+                            </div>
+                            <div class="rounded border w-100 p-3">
+                              <p class="d-flex align-items-center mb-0">
+                                <i class="fab fa-cc-visa fa-2x fa-lg text-body pe-2"></i>Debit Card
+                              </p>
+                            </div>
+                          </div>
+                          <div class="d-flex flex-row">
+                            <div class="d-flex align-items-center pe-2">
+                              <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel3v"
+                                value="" aria-label="..." />
+                            </div>
+                            <div class="rounded border w-100 p-3">
+                              <p class="d-flex align-items-center mb-0">
+                                <i class="fab fa-cc-paypal fa-2x fa-lg text-body pe-2"></i>PayPal
+                              </p>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="col-md-6 col-lg-4 col-xl-6">
+                        <div class="row">
+                          <div class="col-12 col-xl-6">
+                            <div data-mdb-input-init class="form-outline mb-4 mb-xl-5">
+                              <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
+                                placeholder="John Smith" />
+                              <label class="form-label" for="typeName">Name on card</label>
+                            </div>
+        
+                            <div data-mdb-input-init class="form-outline mb-4 mb-xl-5">
+                              <input type="text" id="typeExp" class="form-control form-control-lg" placeholder="MM/YY"
+                                size="7" id="exp" minlength="7" maxlength="7" />
+                              <label class="form-label" for="typeExp">Expiration</label>
+                            </div>
+                          </div>
+                          <div class="col-12 col-xl-6">
+                            <div data-mdb-input-init class="form-outline mb-4 mb-xl-5">
+                              <input type="text" id="typeText" class="form-control form-control-lg" siez="17"
+                                placeholder="1111 2222 3333 4444" minlength="19" maxlength="19" />
+                              <label class="form-label" for="typeText">Card Number</label>
+                            </div>
+        
+                            <div data-mdb-input-init class="form-outline mb-4 mb-xl-5">
+                              <input type="password" id="typeText" class="form-control form-control-lg"
+                                placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3" />
+                              <label class="form-label" for="typeText">Cvv</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-xl-3">
+                        <div class="d-flex justify-content-between" style="font-weight: 500;">
+                          <p class="mb-2">Subtotal&nbsp;$</p>
+                          <p class="mb-2 subtotal-cart">$</p>
+                        </div>
+        
+                        <div class="d-flex justify-content-between" style="font-weight: 500;">
+                          <p class="mb-0">Shipping&nbsp;</p>
+                          <p class="mb-0 shipping">$2.99</p>
+                        </div>
+        
+                        <hr class="my-4">
+        
+                        <div class="d-flex justify-content-between mb-4" style="font-weight: 500;">
+                          <p class="mb-2">Total (tax included)&nbsp;$</p>
+                          <p class="mb-2 total-cart"></p>
+                        </div>
+        
+                        <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block btn-lg">
+                          <div class="d-flex justify-content-between">
+                            <span>Checkout&nbsp;$</span>
+                            <span class="checkout-btn">$</span>
+                          </div>
+                        </button>
+        
+                      </div>
+                    </div>
+        
+                  </div>
+                </div>
+        
+              </div>
+            </div>
+          </div>
+        </section>
     </div>
   </div>
 </div>
-  </div>
 
-
-    <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="staticBackdropLabel">Offcanvas</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <div>
-          <section class="h-100 h-custom">
-              <div class="container h-100 py-5">
-                <div class="row d-flex justify-content-center align-items-center h-100">
-                  <div class="col">
-            
-                    <div class="table-responsive">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th scope="col" class="h5">Shopping Bag</th>
-                            <th scope="col">Format</th>
-                            <th scope="col">Quantity</th>
-                            <th scope="col">Price</th>
-                          </tr>
-                        </thead>
-                        <tbody id="cart-elements">
-                          
-                        </tbody>
-                      </table>
-                    </div>
-            
-                    <div class="shadow-2-strong mb-5 mb-lg-0" style="border-radius: 16px;">
-                      <div class="card-body p-4">
-            
-                        <div class="row">
-                          <div class="col-md-6 col-lg-4 col-xl-3 mb-4 mb-md-0">
-                            <form>
-                              <div class="d-flex flex-row pb-3">
-                                <div class="d-flex align-items-center pe-2">
-                                  <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1v"
-                                    value="" aria-label="..." checked />
-                                </div>
-                                <div class="rounded border w-100 p-3">
-                                  <p class="d-flex align-items-center mb-0">
-                                    <i class="fab fa-cc-mastercard fa-2x text-body pe-2"></i>Credit
-                                    Card
-                                  </p>
-                                </div>
-                              </div>
-                              <div class="d-flex flex-row pb-3">
-                                <div class="d-flex align-items-center pe-2">
-                                  <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel2v"
-                                    value="" aria-label="..." />
-                                </div>
-                                <div class="rounded border w-100 p-3">
-                                  <p class="d-flex align-items-center mb-0">
-                                    <i class="fab fa-cc-visa fa-2x fa-lg text-body pe-2"></i>Debit Card
-                                  </p>
-                                </div>
-                              </div>
-                              <div class="d-flex flex-row">
-                                <div class="d-flex align-items-center pe-2">
-                                  <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel3v"
-                                    value="" aria-label="..." />
-                                </div>
-                                <div class="rounded border w-100 p-3">
-                                  <p class="d-flex align-items-center mb-0">
-                                    <i class="fab fa-cc-paypal fa-2x fa-lg text-body pe-2"></i>PayPal
-                                  </p>
-                                </div>
-                              </div>
-                            </form>
-                          </div>
-                          <div class="col-md-6 col-lg-4 col-xl-6">
-                            <div class="row">
-                              <div class="col-12 col-xl-6">
-                                <div data-mdb-input-init class="form-outline mb-4 mb-xl-5">
-                                  <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
-                                    placeholder="John Smith" />
-                                  <label class="form-label" for="typeName">Name on card</label>
-                                </div>
-            
-                                <div data-mdb-input-init class="form-outline mb-4 mb-xl-5">
-                                  <input type="text" id="typeExp" class="form-control form-control-lg" placeholder="MM/YY"
-                                    size="7" id="exp" minlength="7" maxlength="7" />
-                                  <label class="form-label" for="typeExp">Expiration</label>
-                                </div>
-                              </div>
-                              <div class="col-12 col-xl-6">
-                                <div data-mdb-input-init class="form-outline mb-4 mb-xl-5">
-                                  <input type="text" id="typeText" class="form-control form-control-lg" siez="17"
-                                    placeholder="1111 2222 3333 4444" minlength="19" maxlength="19" />
-                                  <label class="form-label" for="typeText">Card Number</label>
-                                </div>
-            
-                                <div data-mdb-input-init class="form-outline mb-4 mb-xl-5">
-                                  <input type="password" id="typeText" class="form-control form-control-lg"
-                                    placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3" />
-                                  <label class="form-label" for="typeText">Cvv</label>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-4 col-xl-3">
-                            <div class="d-flex justify-content-between" style="font-weight: 500;">
-                              <p class="mb-2">Subtotal&nbsp;$</p>
-                              <p class="mb-2 subtotal-cart">$</p>
-                            </div>
-            
-                            <div class="d-flex justify-content-between" style="font-weight: 500;">
-                              <p class="mb-0">Shipping&nbsp;</p>
-                              <p class="mb-0 shipping">$2.99</p>
-                            </div>
-            
-                            <hr class="my-4">
-            
-                            <div class="d-flex justify-content-between mb-4" style="font-weight: 500;">
-                              <p class="mb-2">Total (tax included)&nbsp;$</p>
-                              <p class="mb-2 total-cart"></p>
-                            </div>
-            
-                            <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block btn-lg">
-                              <div class="d-flex justify-content-between">
-                                <span>Checkout&nbsp;$</span>
-                                <span class="checkout-btn">$</span>
-                              </div>
-                            </button>
-            
-                          </div>
-                        </div>
-            
-                      </div>
-                    </div>
-            
-                  </div>
-                </div>
-              </div>
-            </section>
-        </div>
-      </div>
-    </div>
-
-    <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="preferiti" aria-labelledby="staticBackdropLabel">
-      <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="staticBackdropLabel">Preferiti</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-          <section class="h-100 h-custom">
-              <div class="container h-100 py-5">
-                  <div class="row d-flex justify-content-center align-items-center h-100">
-                      <div class="col">
-                          <div class="table-responsive">
-                              <table class="table">
-                                  <thead>
-                                      <tr>
-                                          <th scope="col" class="h5">Articolo</th>
-                                          <th scope="col">Aggiungi al carrello</th>
-                                          <th scope="col">Rimuovi</th>
-                                      </tr>
-                                  </thead>
-                                  <tbody id="favorites-list">
-                                      <!-- I preferiti verranno aggiunti  qui -->
-                                </tbody>
-                              </table>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </section>
+<!-- Modal Preferiti -->
+<div class="modal fade" id="preferitiModal" tabindex="-1" aria-labelledby="preferitiModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="preferitiModalLabel">I tuoi preferiti</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <ul id="lista-preferiti" class="list-group">
+                  <!-- Qui verranno aggiunti i prodotti preferiti -->
+              </ul>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+          </div>
       </div>
   </div>
+</div>
 
 
 
 
 
-
-
-
-
-
-
-    <div class="carousel">
-        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="5000">
-                <img src="Images/banner1.png" class="d-block w-100" alt="banner">
-            </div>
-            <div class="carousel-item" data-bs-interval="5000">
-              <img src="Images/banner2.png" class="d-block w-100" alt="banner">
-            </div>
-            <div class="carousel-item">
-              <img src="Images/banner3.png" class="d-block w-100" alt="banner">
-            </div>
+<div class="carousel">
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="5000">
+            <img src="Images/banner1.png" class="d-block w-100" alt="banner">
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+        <div class="carousel-item" data-bs-interval="5000">
+          <img src="Images/banner2.png" class="d-block w-100" alt="banner">
+        </div>
+        <div class="carousel-item">
+          <img src="Images/banner3.png" class="d-block w-100" alt="banner">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+<div id="category-content">
+    <h1 id="category-header">Shop by category </h1>
+    <div id="category-circle-container">
+        <div class="circle hvr-glow">
+            <img src="Images/woman.jpg" alt="" class="category-item" width="200" height="210"  >
+            <span class="category-name"> Women's Clothing </span>
+        </div>
+        <div class="circle">
+            <img src="Images/man.jfif" alt="" class="category-item" width="200" height="210">
+            <span class="category-name"> Men's Clothing </span>
+        </div>
+        <div class="circle">
+            <img src="Images/jewelry.avif" alt="" class="category-item" width="200" height="210">
+            <span class="category-name">Jewelry</span>
+        </div>
+        <div class="circle">
+            <img src="Images/Eletronics.jpg" alt="" class="category-item" width="200" height="210">
+            <span class="category-name">Tech & Electronics</span>
+        </div>
+    </div>
+</div>
+
+ <!--card promozioni-->
+<h2>Special Deals</h2>
+<div class="container-promozioni">
+</div>
+
+<!--card disponibili-->
+<h2>Our Collection</h2>
+<div class="container-disponibili">
+    </div>
+    <div class="discoverAll">
+      <a href="Prodotti.html">
+        <button type="button" class="btn btn-primary">
+            Discover All
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </div>
-
-    <div id="category-content">
-        <h1 id="category-header">Shop by category </h1>
-        <div id="category-circle-container">
-            <div class="circle hvr-glow">
-                <img src="Images/woman.jpg" alt="" class="category-item" width="200" height="210"  >
-                <span class="category-name"> Women's Clothing </span>
-            </div>
-            <div class="circle">
-                <img src="Images/man.jfif" alt="" class="category-item" width="200" height="210">
-                <span class="category-name"> Men's Clothing </span>
-            </div>
-            <div class="circle">
-                <img src="Images/jewelry.avif" alt="" class="category-item" width="200" height="210">
-                <span class="category-name">Jewelry</span>
-            </div>
-            <div class="circle">
-                <img src="Images/Eletronics.jpg" alt="" class="category-item" width="200" height="210">
-                <span class="category-name">Tech & Electronics</span>
-            </div>
+    </a>
+  </div>
+  <!--chi siamo-->
+<div id="chi-siamo-container">
+    <h1 id="chi-siamo-title">Get to know Us</h1>
+    <div id="chi-siamo-content-container">
+        <div class="chi-siamo-column-container">
+            <h3 class="content-title">A community doing good</h1>
+            <p class="content-text">We are a global online marketplace where creativity and passion come together. Here, people connect to create, sell, buy, and collect unique items. But we’re more than just a marketplace—we’re a community dedicated to supporting small businesses, empowering individuals, and making a positive impact on the planet. Together, we’re shaping a better way to shop and sell.</p>
+        </div>
+        <div class="chi-siamo-column-container">
+            <h3 class="content-title">Support independent creators</h1>
+            <p class="content-text">There’s no massive warehouse just millions of talented individuals sharing what they love. We make it easy for you to discover and connect directly with makers, ensuring that every purchase is meaningful. Whether you’re looking for something handcrafted, vintage, or truly one of a kind, you’ll find it here.</p>
+        </div>
+        <div class="chi-siamo-column-container">
+            <h3 class="content-title">Peace of mind</h1>
+            <p class="content-text">Your trust matters to us. That’s why we prioritize your privacy and security every step of the way. Our dedicated team works tirelessly to protect your data and ensure smooth transactions. And if you ever need help, we’re always here to support you, so you can shop with confidence and peace of mind.</p>
         </div>
     </div>
+    <h3 id="question-title">Have a question? Well, we’ve got some answers.</h1>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Send Email</button>
 
-     <!--card promozioni-->
-    <h2>Special Deals</h2>
-    <div class="container-promozioni">
-    </div>
-    
-    <!--card disponibili-->
-    <h2>Our Collection</h2>
-    <div class="container-disponibili">
-        </div>
-        <div class="discoverAll">
-          <a href="Prodotti.html">
-            <button type="button" class="btn btn-primary">
-                Discover All
-            </button>
-        </a>
-      </div>
-      <!--chi siamo-->
-    <div id="chi-siamo-container">
-        <h1 id="chi-siamo-title">Get to know Us</h1>
-        <div id="chi-siamo-content-container">
-            <div class="chi-siamo-column-container">
-                <h3 class="content-title">A community doing good</h1>
-                <p class="content-text">We are a global online marketplace where creativity and passion come together. Here, people connect to create, sell, buy, and collect unique items. But we’re more than just a marketplace—we’re a community dedicated to supporting small businesses, empowering individuals, and making a positive impact on the planet. Together, we’re shaping a better way to shop and sell.</p>
-            </div>
-            <div class="chi-siamo-column-container">
-                <h3 class="content-title">Support independent creators</h1>
-                <p class="content-text">There’s no massive warehouse just millions of talented individuals sharing what they love. We make it easy for you to discover and connect directly with makers, ensuring that every purchase is meaningful. Whether you’re looking for something handcrafted, vintage, or truly one of a kind, you’ll find it here.</p>
-            </div>
-            <div class="chi-siamo-column-container">
-                <h3 class="content-title">Peace of mind</h1>
-                <p class="content-text">Your trust matters to us. That’s why we prioritize your privacy and security every step of the way. Our dedicated team works tirelessly to protect your data and ensure smooth transactions. And if you ever need help, we’re always here to support you, so you can shop with confidence and peace of mind.</p>
-            </div>
-        </div>
-        <h3 id="question-title">Have a question? Well, we’ve got some answers.</h1>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Send Email</button>
-
-    </div>
+</div>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h1 class="modal-title fs-5" id="exampleModalLabel">New message to email@website.com</h1>
-      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<div class="modal-content">
+<div class="modal-header">
+  <h1 class="modal-title fs-5" id="exampleModalLabel">New message to email@website.com</h1>
+  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+  <form>
+    <div class="mb-3">
+      <label for="recipient-name" class="col-form-label">Email:</label>
+      <input type="email" class="form-control" id="recipient-name">
     </div>
-    <div class="modal-body">
-      <form>
-        <div class="mb-3">
-          <label for="recipient-name" class="col-form-label">Email:</label>
-          <input type="email" class="form-control" id="recipient-name">
-        </div>
-        <div class="mb-3">
-          <label for="message-text" class="col-form-label">Message:</label>
-          <textarea class="form-control" id="message-text"></textarea>
-        </div>
+    <div class="mb-3">
+      <label for="message-text" class="col-form-label">Message:</label>
+      <textarea class="form-control" id="message-text"></textarea>
+    </div>
 
-        <div class="mb-3">
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-            <label class="form-check-label" for="flexSwitchCheckDefault">Accetti le <a href="#">Condizioni d'uso</a> e <a href="#">l'informativa sulla Privacy.</a></label>
-          </div>
-        </div>
-      </form>
+    <div class="mb-3">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Accetti le <a href="#">Condizioni d'uso</a> e <a href="#">l'informativa sulla Privacy.</a></label>
+      </div>
     </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      <button type="button" class="btn btn-primary">Send message</button>
-    </div>
-  </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+  <button type="button" class="btn btn-primary">Send message</button>
+</div>
+</div>
 </div>
 </div>
 
 <!-- Footer -->
-  <footer
-          class="text-center text-lg-start text-muted"
-          style="background-color: #F5ECD5"
-          >
-    <!-- Section: Social media -->
-    <section
-             class="d-flex justify-content-between p-4"
-             style="background-color: #578E7E"
-             >
-      <!-- Left -->
-      <div class="me-5">
-        <span>Get connected with us on social networks:</span>
-      </div>
-
-      <div>
-        <a href="" class="text-dark me-4">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="" class="text-dark me-4">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="" class="text-dark me-4">
-          <i class="fab fa-google"></i>
-        </a>
-        <a href="" class="text-dark me-4">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="" class="text-dark me-4">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="" class="text-dark me-4">
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-    </section>
-
-    <section class="">
-      <div class="container text-center text-md-start mt-5">
-        <!-- Grid row -->
-        <div class="row mt-3">
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-            <!-- Content -->
-            <h6 class="text-uppercase fw-bold">Company name</h6>
-            <p>
-              Here you can use rows and columns to organize your footer
-              content. Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit.
-            </p>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold">Products</h6>
-            <p>
-              <a href="#!" class="text-dark">MDBootstrap</a>
-            </p>
-            <p>
-              <a href="#!" class="text-dark">MDWordPress</a>
-            </p>
-            <p>
-              <a href="#!" class="text-dark">BrandFlow</a>
-            </p>
-            <p>
-              <a href="#!" class="text-dark">Bootstrap Angular</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold">Useful links</h6>
-            <p>
-              <a href="#!" class="text-dark">Your Account</a>
-            </p>
-            <p>
-              <a href="#!" class="text-dark">Become an Affiliate</a>
-            </p>
-            <p>
-              <a href="#!" class="text-dark">Shipping Rates</a>
-            </p>
-            <p>
-              <a href="#!" class="text-dark">Help</a>
-            </p>
-          </div>
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold">Contact</h6>
-            <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-            <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
-            <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-            <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
-          </div>
-          <!-- Grid column -->
-        </div>
-        <!-- Grid row -->
-      </div>
-    </section>
-    <!-- Section: Links  -->
-
-    <!-- Copyright -->
-    <div
-         class="text-center p-3"
-         style="background-color: rgba(0, 0, 0, 0.2)"
+<footer
+      class="text-center text-lg-start text-muted"
+      style="background-color: #F5ECD5"
+      >
+<!-- Section: Social media -->
+<section
+         class="d-flex justify-content-between p-4"
+         style="background-color: #578E7E"
          >
-      © 2020 Copyright:
-      <a class="text-dark" href="https://mdbootstrap.com/"
-         >MDBootstrap.com</a
-        >
+  <!-- Left -->
+  <div class="me-5">
+    <span>Get connected with us on social networks:</span>
+  </div>
+
+  <div>
+    <a href="" class="text-dark me-4">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="" class="text-dark me-4">
+      <i class="fab fa-twitter"></i>
+    </a>
+    <a href="" class="text-dark me-4">
+      <i class="fab fa-google"></i>
+    </a>
+    <a href="" class="text-dark me-4">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="" class="text-dark me-4">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="" class="text-dark me-4">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+</section>
+
+<section class="">
+  <div class="container text-center text-md-start mt-5">
+    <!-- Grid row -->
+    <div class="row mt-3">
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+        <!-- Content -->
+        <h6 class="text-uppercase fw-bold">Company name</h6>
+        <p>
+          Here you can use rows and columns to organize your footer
+          content. Lorem ipsum dolor sit amet, consectetur adipisicing
+          elit.
+        </p>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+        <!-- Links -->
+        <h6 class="text-uppercase fw-bold">Products</h6>
+        <p>
+          <a href="#!" class="text-dark">MDBootstrap</a>
+        </p>
+        <p>
+          <a href="#!" class="text-dark">MDWordPress</a>
+        </p>
+        <p>
+          <a href="#!" class="text-dark">BrandFlow</a>
+        </p>
+        <p>
+          <a href="#!" class="text-dark">Bootstrap Angular</a>
+        </p>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+        <!-- Links -->
+        <h6 class="text-uppercase fw-bold">Useful links</h6>
+        <p>
+          <a href="#!" class="text-dark">Your Account</a>
+        </p>
+        <p>
+          <a href="#!" class="text-dark">Become an Affiliate</a>
+        </p>
+        <p>
+          <a href="#!" class="text-dark">Shipping Rates</a>
+        </p>
+        <p>
+          <a href="#!" class="text-dark">Help</a>
+        </p>
+      </div>
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+        <!-- Links -->
+        <h6 class="text-uppercase fw-bold">Contact</h6>
+        <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+        <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
+        <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+        <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+      </div>
+      <!-- Grid column -->
     </div>
-    <!-- Copyright -->
-  </footer>
+    <!-- Grid row -->
+  </div>
+</section>
+<!-- Section: Links  -->
+
+<!-- Copyright -->
+<div
+     class="text-center p-3"
+     style="background-color: rgba(0, 0, 0, 0.2)"
+     >
+  © 2020 Copyright:
+  <a class="text-dark" href="https://mdbootstrap.com/"
+     >MDBootstrap.com</a
+    >
+</div>
+<!-- Copyright -->
+</footer>
 
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -552,5 +543,5 @@ crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="js/cart.js"></script>
 <script src="js/profile.js"></script>
-<script src="preferiti.js"></script>
+<script src="js/preferiti.js"></script>
 </body>
