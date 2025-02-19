@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistenza Clienti</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .chat-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .message {
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            max-width: 75%;
+        }
+        .user-message {
+            background: #007bff;
+            color: white;
+            align-self: flex-end;
+        }
+        .support-message {
+            background: #e9ecef;
+            color: black;
+            align-self: flex-start;
+        }
+        .chat-box {
+            display: flex;
+            flex-direction: column;
+            height: 300px;
+            overflow-y: auto;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chat-container">
+        <h4 class="text-center">Chat con l'Assistenza</h4>
+        <div class="chat-box" id="chatBox">
+            <div class="message support-message">
+                Ciao! Come posso aiutarti oggi? 😊
+            </div>
+        </div>
+        <div class="input-group mt-3">
+            <input type="text" class="form-control" id="messageInput" placeholder="Scrivi un messaggio...">
+            <button class="btn btn-primary" onclick="sendMessage()">Invia</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            let input = document.getElementById("messageInput");
+            let message = input.value.trim();
+            if (message === "") return;
+
+            let chatBox = document.getElementById("chatBox");
+
+            // Aggiunge il messaggio dell'utente
+            let userMessage = document.createElement("div");
+            userMessage.className = "message user-message";
+            userMessage.innerText = message;
+            chatBox.appendChild(userMessage);
+
+            input.value = ""; // Pulisce il campo di input
+
+            // Simula una risposta dell'assistenza dopo 1 secondo
+            setTimeout(() => {
+                let supportReply = document.createElement("div");
+                supportReply.className = "message support-message";
+                supportReply.innerText = getSupportReply(message);
+                chatBox.appendChild(supportReply);
+
+                chatBox.scrollTop = chatBox.scrollHeight; // Scorre in basso alla chat
+            }, 1000);
+
+            chatBox.scrollTop = chatBox.scrollHeight; // Scorre in basso alla chat
+        }
+
+        function getSupportReply(userMessage) {
+            // Simuliamo risposte automatiche semplici
+            const responses = {
+                "ciao": "Ciao! Come posso aiutarti? 😊",
+                "problema ordine": "Mi dispiace per il problema! Qual è il numero dell'ordine?",
+                "grazie": "Di nulla! Siamo qui per aiutarti. 👍",
+                "spedizione": "Puoi controllare lo stato della spedizione nella sezione 'I miei ordini'."
+            };
+
+            let lowerMessage = userMessage.toLowerCase();
+            return responses[lowerMessage] || "Grazie per il messaggio! Ti risponderemo al più presto. 😊";
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
