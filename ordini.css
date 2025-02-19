@@ -1,193 +1,87 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-#nav {
-  background-color: #578E7E !important;
-  margin-bottom: 50px;
-  
-}
-
-.navbar-nav {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-right: 30px;
-}
-.navbar-nav .nav-item {
-  margin: 0 15px;
-  align-items: center;
-}
-
-.navbar .icons {
-  color: #F5ECD5;
-  margin-left: 15px;
-  font-size: 25px;
-}
-
-#navbarSupportedContent {
-  display: flex;
-  position: relative;
-  
-}
-.logo {
-  margin: 5px 30px;
-  margin-left: 30px;
-  margin-bottom: 5px;
-}
-
-
-#navbarSupportedContent form {
-  display: flex;
-  align-items: center;
-  
-}
-.d-flex1{
-  position: absolute;
-  right: 20px;
-
-}
-
-#navbarSupportedContent input.form-control {
-  display: flex;
-  border-radius: 25px; 
-  width: 90%;
-  padding: 10px 10px; 
-  height: 40px;
-  
-
-}
-
-#tasto {
-  border-radius: 70%;
-  background-color: #3D3D3D;
-  color: white;
-  width: 40px;
-  height: 40px;
-  font-size: 17px;
-}
-#nav {
-  background-color: #578E7E !important;
-  margin-bottom: 50px;
-  
-}
-
-.navbar-nav {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-right: 30px;
-}
-.navbar-nav .nav-item {
-  margin: 0 15px;
-  align-items: center;
-}
-
-.navbar .icons {
-  color: #F5ECD5;
-  margin-left: 15px;
-  font-size: 25px;
-}
-
-#navbarSupportedContent {
-  display: flex;
-  position: relative;
-  
-}
-.logo {
-  margin: 5px 30px;
-  margin-left: 30px;
-  margin-bottom: 5px;
-}
-
-
-#navbarSupportedContent form {
-  display: flex;
-  align-items: center;
-  
-}
-.d-flex1{
-  position: absolute;
-  right: 20px;
-
-}
-
-#navbarSupportedContent input.form-control {
-  display: flex;
-  border-radius: 25px; 
-  width: 90%;
-  padding: 10px 10px; 
-  height: 40px;
-  
-
-}
-
-#tasto {
-  border-radius: 70%;
-  background-color: #3D3D3D;
-  color: white;
-  width: 40px;
-  height: 40px;
-  font-size: 17px;
-  border: none;
-  margin-left: 10px;
-  
-}
-
-.icons {
-  display: flex;
-  gap: 15px;
-  font-size: 20px;
-}
-
-.icons i:hover {
-  color: rgb(0, 0, 0); 
-  cursor: pointer;
-}
-.icons {
-  display: flex;
-  gap: 15px;
-  font-size: 20px;
-}
-
-.icons i:hover {
-  color: rgb(0, 0, 0); 
-  cursor: pointer;
-}
-
 h2 {
-text-align: center;
-margin-top: 5%;
-margin-bottom: 2%;
+    text-align: center;
+    font-weight: bold;
+    color: #578E7E;
 }
 
-body{
-background-color: #FFFAEC;
-
+/* Stile per gli ordini */
+.order-item {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.span-weight{
-  font-weight:bold;
-}
-/*fine footer*/
-
-.text-center {
-    margin: 90px 0 80px 0;
+.order-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Testo degli ordini */
+.order-item p {
+    margin: 0;
+}
 
-.btn-primary{
-    background-color: #306455;
-    border-color: #578E7E;
-    border-radius: 25px;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    display: block;
-    width: 50%;
-    
-  }
-  
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary:active:hover{
+/* Stato dell'ordine */
+.order-status {
+    font-weight: bold;
+}
+
+.order-status.text-primary {
+    color: #578E7E;
+}
+
+.order-status.text-success {
+    color: #28a745;
+}
+
+.order-status.text-danger {
+    color: #dc3545;
+}
+
+/* Pulsante dettagli */
+.order-item button {
+    font-size: 14px;
+    padding: 5px 10px;
+    border: 1px solid #578E7E;
+    background-color: #fff;
+    color: #578E7E;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.order-item button:hover {
     background-color: #578E7E;
-    border-color: #306455;
-  }
+    color: #fff;
+}
+
+/* Stile per il modal */
+.modal-content {
+    border-radius: 8px;
+}
+
+.modal-header {
+    background-color: #578E7E;
+    color: white;
+    border-radius: 8px 8px 0 0;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer button {
+    background-color: #578E7E;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-footer button:hover {
+    background-color: #90b779;
+}
