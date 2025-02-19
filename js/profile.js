@@ -19,8 +19,8 @@ const checkLogin = ()=>{
     .then(response => {
         if (!response.ok) {
             console.log(response)
-            // document.getElementById("logged-icons").style.display = "none"
-            // document.getElementById("non-logged-icons").style.display = "block"
+            document.getElementById("logged-icons").setAttribute('style', 'display: none !important');
+            document.getElementById("non-logged-icons").setAttribute('style', 'display: flex !important');
             throw new Error('Login fallito');
         }
         return response.json();
