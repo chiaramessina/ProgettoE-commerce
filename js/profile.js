@@ -4,7 +4,10 @@ function printOutput(data) {
     // output.textContent = JSON.stringify(data, null, 2);
   }
 
-
+  document.addEventListener("DOMContentLoaded", function () {
+    // Se l'utente è già loggato, aggiorna il profilo automaticamente
+    updateProfile();
+});
 const checkLogin = ()=>{
     const token = localStorage.getItem("authToken");
 
@@ -291,3 +294,24 @@ const checkLogin = ()=>{
 
 
   window.addEventListener("DOMContentLoaded", checkLogin)
+
+   /*//funzione modifica dati profilo
+fetch("http://localhost:8080/api/users/me", {
+  method: "GET",
+  headers: {
+      "Authorization": "Bearer " + localStorage.getItem("token")
+  }
+})
+.then(response => {
+  if (!response.ok) {
+    throw new Error("Errore nel recupero dei dati");
+  }
+  return response.json();
+})
+.then(data => {
+  // Aggiorna i dati nel profilo
+  document.getElementById("username").textContent = data.username;
+  document.getElementById("name").textContent = "Nome: " + data.name + " " + data.surname;
+  document.getElementById("email").textContent = "Email: " + data.email;
+})
+.catch(error => console.error("Errore:", error));*/

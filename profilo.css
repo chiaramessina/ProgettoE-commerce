@@ -51,6 +51,16 @@
     display: none !important;
 }
 
-/* .d-flex {
-    display: flex !important;
-} */
+.profile-card {
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
