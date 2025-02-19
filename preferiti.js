@@ -1,5 +1,5 @@
 // Funzione per caricare i preferiti dal localStorage
-/*function loadFavorites() {
+function loadFavorites() {
   const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
   const favoritesList = document.getElementById('favorites-list');
   favoritesList.innerHTML = ''; // Pulisce la lista dei preferiti prima di ricaricarla
@@ -47,8 +47,8 @@ function removeFromFavorites(productId) {
 }
 
 // Funzione per aggiungere al carrello
-function addToCart(productId) {
-  const product = { // Esempio di oggetto prodotto (dovresti ottenerlo da un array di prodotti reali)
+/*function addToCart(productId) {
+  const product = { 
       id: productId,
       nome: 'Nome del prodotto',
       immagine: 'URL dell\'immagine',
@@ -56,7 +56,7 @@ function addToCart(productId) {
 
   // Aggiungi il prodotto al carrello
   alert(`Aggiunto al carrello: ${product.nome}`);
-}
+}*/
 
 // Funzione per inizializzare i preferiti
 document.addEventListener('DOMContentLoaded', function() {
@@ -84,51 +84,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Carica i preferiti
   loadFavorites();
-});*/
-/*<body>
-                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
-                    <i class="fas fa-heart"></i>
-                </button>
-            
-                <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="staticBackdropLabel">Preferiti</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <section class="h-100 h-custom">
-                            <div class="container h-100 py-5">
-                                <div class="row d-flex justify-content-center align-items-center h-100">
-                                    <div class="col">
-                                        <div class="table-responsive">
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col" class="h5">Articolo</th>
-                                                        <th scope="col">Aggiungi al carrello</th>
-                                                        <th scope="col">Rimuovi</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="favorites-list">-->
-                                                    <!-- I preferiti verranno aggiunti  qui -->
-                                              <!--</tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </div>-->
-            
-                <!-- Bootstrap JS 
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-            
-             Collegamento al tuo file JavaScript preferiti.js 
-                <script src="preferiti.js"></script>
-            </body>
-            
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-            </div>  
-            </div>*/
-    
+});
+// Funzione per aggiungere ai preferiti (puoi fare una chiamata API al backend)
+function aggiungiAiPreferiti(prodottoId) {
+    // Qui invierai una richiesta al backend per aggiungere il prodotto ai preferiti
+    fetch('/aggiungi-preferito', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ prodottoId })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Prodotto aggiunto ai preferiti', data);
+        alert('Prodotto aggiunto ai preferiti!');
+    })
+    .catch(error => console.error('Errore:', error));}
