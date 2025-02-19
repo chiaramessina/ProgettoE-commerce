@@ -1,0 +1,90 @@
+h2 {
+    text-align: center;
+    font-weight: bold;
+    color: #578E7E;
+}
+
+/* Stile per gli ordini */
+.order-item {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.order-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Testo degli ordini */
+.order-item p {
+    margin: 0;
+}
+
+/* Stato dell'ordine */
+.order-status {
+    font-weight: bold;
+}
+
+.order-status.text-primary {
+    color: #578E7E;
+}
+
+.order-status.text-success {
+    color: #699488;
+}
+
+.order-status.text-danger {
+    color: #dc3545;
+}
+
+/* Pulsante dettagli */
+.order-item button {
+    font-size: 14px;
+    padding: 5px 10px;
+    border: 1px solid #578E7E;
+    background-color: #fff;
+    color: #578E7E;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.order-item button:hover {
+    background-color: #578E7E;
+    color: #fff;
+}
+.text-primary {
+  color: #578E7E !important;
+}
+
+/* Stile per il modal */
+.modal-content {
+    border-radius: 8px;
+}
+
+.modal-header {
+    background-color: #578E7E;
+    color: white;
+    border-radius: 8px 8px 0 0;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer button {
+    background-color: #578E7E;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-footer button:hover {
+    background-color: #699488;
+}

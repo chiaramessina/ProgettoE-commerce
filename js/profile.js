@@ -27,9 +27,10 @@ const checkLogin = ()=>{
     })
     .then(data => {
         console.log('Login effettuato:', data);
-        console.log(data)
+        // console.log(data)
         // Salva il token nel localStorage
         if(data.token) {
+          updateProfileData(data);
           localStorage.setItem("authToken", data.token);
           // Mostra il pulsante Logout e nasconde il form di login
           document.getElementById("logoutButton").style.display = "block";
@@ -43,7 +44,7 @@ const checkLogin = ()=>{
         printOutput({ error: error.message });
     });
 
-    console.log(token);
+    // console.log(token);
 }  
 
   // Funzione per effettuare il login
@@ -65,6 +66,7 @@ const checkLogin = ()=>{
     .then(data => {
         console.log('Login effettuato:', data);
         printOutput(data);
+        updateProfileData(data);
         // Salva il token nel localStorage
         if(data.token) {
           localStorage.setItem("authToken", data.token);
@@ -271,6 +273,17 @@ const checkLogin = ()=>{
   document.querySelector(".fa-shopping-cart").addEventListener("click", toggleCart)
   document.querySelector(".btn-close").addEventListener("click", toggleCart)
 
+
+
+  const updateProfileData = (data)=>{
+    const profileUsername = document.querySelector("#profile-username");
+    const profileName = document.querySelector("#profile-name");
+    const profileEmail = document.querySelector("#profile-email");
+
+    profileUsername ? profileUsername.textContent = "@"+ data.username: null;
+    profileName ? profileName.textContent = "Nome: "+ data.nome + " " +data.cognome: null;
+    profileEmail ? profileEmail.textContent = "Email: "+ data.email: null;
+  }
 
 
   window.addEventListener("DOMContentLoaded", checkLogin)
